@@ -1,0 +1,16 @@
+---
+resources:
+- name: source-code
+  type: git
+  source:
+    uri: https://github.com/morsley-uk/walking-skeleton
+    branch: master
+
+jobs:
+  - name: compile-app
+    plan:
+    - get: source-code
+    - task: clean
+    - task: restore
+    - task: build
+    - task: publish
