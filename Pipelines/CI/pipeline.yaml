@@ -3,41 +3,43 @@ resources:
 
   # GET THE SOURCE CODE
 
-- name: source-code
-  type: git
-  icon: github-circle
-  # check_every: 5 # Minutes
-  source:
-    uri: https://github.com/morsley-uk/walking-skeleton
-    branch: master
+  - name: source-code
+    type: git
+    icon: github-circle
+    # check_every: 5 # Minutes
+    source:
+      uri: https://github.com/morsley-uk/walking-skeleton
+      branch: master
 
 jobs:
 
-- name: compile-app
+  - name: compile-app
 
-  plan:
+    plan:
 
-  - get: source-code
+      - get: source-code
+        trigger: true
 
-  # CLEAN THE SOURCE CODE
+       # CLEAN THE SOURCE CODE
 
-  - task: clean
+      - task: clean
+        config: 
+          inputs:
+          - name: source-code
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: mcr.microsoft.com/dotnet/core/sdk
+              tag: 3.1.101-bionic
+          outputs:
+          - name: cleaned-code
+          run:
+            path: sh # Is it executable?
+            args: ["./Scripts/clean.sh"]
 
-      platform: linux
-      image_resource:
-        type: docker-image
-        source: mcr.microsoft.com/dotnet/core/sdk:3.1
-        # repository: mcr.microsoft.com/dotnet/core/sdk:3.1 
-      inputs:
-      - name: source-code
-      outputs:
-      - name: cleaned-code
-      run:
-        path: ./Scripts/clean.sh # Is it executable?
-        args: [.]
+#  - task: restore
 
-  - task: restore
+#  - task: build
 
-  - task: build
-
-  - task: publish
+#  - task: publish
