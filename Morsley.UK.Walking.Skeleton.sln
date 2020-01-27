@@ -12,7 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{36F600
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}"
 	ProjectSection(SolutionItems) = preProject
-		Pipelines\docker-compose.yaml = Pipelines\docker-compose.yaml
 		Pipelines\ReadMe.md = Pipelines\ReadMe.md
 	EndProjectSection
 EndProject
@@ -50,6 +49,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.Walking.Skeleton
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.Walking.Skeleton.API.Tests.Unit", "Tests\Unit\Morsley.UK.Walking.Skeleton.API.UnitTests\Morsley.UK.Walking.Skeleton.API.Tests.Unit.csproj", "{C5A1F29F-10EB-4384-9889-59D985267315}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{90FDD811-F6A6-4AAD-8331-FA86ABF39071}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\Scripts\clean.sh = Pipelines\Scripts\clean.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Concourse", "Concourse", "{ED400882-F14F-4592-A6FE-CFF5388FE672}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\Concourse\docker-compose.yaml = Pipelines\Concourse\docker-compose.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +90,8 @@ Global
 		{425C780E-1E00-462E-800C-AF0FC82F7383} = {36F6004E-F729-4218-9B43-54036409A040}
 		{02105B62-6A77-473D-B429-19DEAEEB2C2B} = {425C780E-1E00-462E-800C-AF0FC82F7383}
 		{C5A1F29F-10EB-4384-9889-59D985267315} = {77B088F8-90F6-45FD-844C-046A74D9B47C}
+		{90FDD811-F6A6-4AAD-8331-FA86ABF39071} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
+		{ED400882-F14F-4592-A6FE-CFF5388FE672} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EAB81E26-DEA4-46CC-82A6-E96750B86FB6}

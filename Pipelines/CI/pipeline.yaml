@@ -1,16 +1,43 @@
 ---
 resources:
+
+  # GET THE SOURCE CODE
+
 - name: source-code
   type: git
+  icon: github-circle
+  # check_every: 5 # Minutes
   source:
     uri: https://github.com/morsley-uk/walking-skeleton
     branch: master
 
 jobs:
-  - name: compile-app
-    plan:
-    - get: source-code
-    - task: clean
-    - task: restore
-    - task: build
-    - task: publish
+
+- name: compile-app
+
+  plan:
+
+  - get: source-code
+
+  # CLEAN THE SOURCE CODE
+
+  - task: clean
+
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: mcr.microsoft.com/dotnet/core/sdk:3.1
+        # repository: mcr.microsoft.com/dotnet/core/sdk:3.1 
+      inputs:
+      - name: source-code
+      outputs:
+      - name: cleaned-code
+      run:
+        path: ./Scripts/clean.sh # Is it executable?
+        args: [.]
+
+  - task: restore
+
+  - task: build
+
+  - task: publish
