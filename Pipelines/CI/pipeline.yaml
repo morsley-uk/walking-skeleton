@@ -58,8 +58,9 @@ jobs:
             args:
             - -exec
             - |
-              apt update
-              apt install tree
+              apt update > /dev/null
+              apt install tree > /dev/null
+              cd source-code
               tree
             #path: ls
             #args: [-laR]
