@@ -16,10 +16,20 @@ resources:
       branch: master
       ignore_paths:
       - .git/**
+      - .git/*
+      - .git/
+      - .git
       - .gitignore
       - License
       - ReadMe.md
 
+  # DETERMINE THE SEMANTIC VERSION
+
+  #- name: semantic-version
+
+  # GET THE KUBERNETES CLUSTER 
+
+  #- name: kubernetes-cluster
 
 jobs:
 
