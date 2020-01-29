@@ -44,6 +44,8 @@ jobs:
 
       # docker run -it ubuntu /bin/bash
 
+      # ToDo --> Build own image with Tree already installed.
+
       - task: list
         config:
           inputs:
@@ -52,16 +54,17 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: ubuntu
+              repository: john-morsley/alpine-with-utilities
           run:
             path: sh
             args:
             - -exec
             - |
-              apt update > /dev/null
-              apt install tree > /dev/null
-              cd source-code
               tree
+#              apt update > /dev/null
+#              apt install tree > /dev/null
+#              cd source-code
+#              tree
             #path: ls
             #args: [-laR]
 
