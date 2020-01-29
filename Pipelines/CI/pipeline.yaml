@@ -54,7 +54,7 @@ jobs:
           image_resource:
             type: docker-image
             source:
-              repository: john-morsley/alpine-with-utilities
+              repository: johnmorsley/alpine-with-utilities
           run:
             path: sh
             args:
