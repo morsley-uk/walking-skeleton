@@ -1,11 +1,13 @@
 ---
 
-# fly --target jm login --concourse-url http://localhost:8080
-# fly --target jm set-pipeline --config pipeline.yaml --pipeline Walking-Skeleton
+# fly --target lh login --concourse-url http://localhost:8080
+# fly --target lh set-pipeline --config pipeline.yaml --pipeline Walking-Skeleton
 
 resources:
 
+  #
   # GET THE SOURCE CODE
+  #
 
   - name: source-code
     type: git
@@ -23,11 +25,15 @@ resources:
       - License
       - ReadMe.md
 
+  #
   # DETERMINE THE SEMANTIC VERSION
+  #
 
   #- name: semantic-version
 
+  #
   # GET THE KUBERNETES CLUSTER 
+  #
 
   #- name: kubernetes-cluster
 
@@ -40,11 +46,11 @@ jobs:
       - get: source-code
         trigger: true
 
+      #
       # LIST SOURCE CODE
+      #
 
-      # docker run -it ubuntu /bin/bash
-
-      # ToDo --> Build own image with Tree already installed.
+      # docker run -it johnmorsley/alpine-with-utilities ./bin/bash
 
       - task: list
         config:
@@ -61,14 +67,10 @@ jobs:
             - -exec
             - |
               tree
-#              apt update > /dev/null
-#              apt install tree > /dev/null
-#              cd source-code
-#              tree
-            #path: ls
-            #args: [-laR]
 
+      #
       # CLEAN THE SOURCE CODE
+      #
 
       - task: clean
         config: 
@@ -80,8 +82,8 @@ jobs:
             source:
               repository: mcr.microsoft.com/dotnet/core/sdk
               tag: 3.1.101-bionic
-          outputs:
-          - name: cleaned-code
+          #outputs:
+          #- name: cleaned-code
           run:
             path: sh
             args:
@@ -92,7 +94,57 @@ jobs:
               cd ../../..
               ./Pipelines/CI/Scripts/clean.sh 
 
-#  - task: restore
+      #
+      # RESTORE THE DEPENDENCIES
+      #
+
+      - task: restore
+        config: 
+          inputs:
+          - name: source-code
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: mcr.microsoft.com/dotnet/core/sdk
+              tag: 3.1.101-bionic
+          #outputs:
+          #- name: restored-code
+          run:
+            path: sh
+            args:
+            - -exec
+            - |
+              cd source-code/Pipelines/CI/Scripts
+              chmod u+x restore.sh
+              cd ../../..
+              ./Pipelines/CI/Scripts/restore.sh 
+
+      #
+      # BUILD THE PROJECT
+      #
+
+      - task: build
+        config: 
+          inputs:
+          - name: source-code
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: mcr.microsoft.com/dotnet/core/sdk
+              tag: 3.1.101-bionic
+          #outputs:
+          #- name: restored-code
+          run:
+            path: sh
+            args:
+            - -exec
+            - |
+              cd source-code/Pipelines/CI/Scripts
+              chmod u+x build.sh
+              cd ../../..
+              ./Pipelines/CI/Scripts/build.sh 
 
 #  - task: build
 
