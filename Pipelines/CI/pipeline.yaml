@@ -67,7 +67,7 @@ jobs:
               cd Pipelines/CI/Scripts
               chmod u+x clean.sh
               cd ../../..
-              ./Pipelines/CI/Scripts/clean.sh 
+              ./clean.sh 
 
 #  - task: restore
 
