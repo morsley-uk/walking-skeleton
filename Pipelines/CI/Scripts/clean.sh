@@ -13,6 +13,6 @@ header 'CLEAN STARTED'
 
 # rm -r Published
 
-ll
+dir
 
 header 'CLEAN COMPLETED'
