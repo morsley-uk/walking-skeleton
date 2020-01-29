@@ -64,9 +64,8 @@ jobs:
             args:
             - -exec
             - |
-              cd Pipelines/CI/Scripts
+              cd source-code/Pipelines/CI/Scripts
               chmod u+x clean.sh
-              cd ../../..
               ./clean.sh 
 
 #  - task: restore
