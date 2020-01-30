@@ -53,7 +53,7 @@ jobs:
       # docker run -it johnmorsley/alpine-with-utilities ./bin/bash
 
       - task: list
-        file: Pipelines/Tasks/list.yaml
+        file: /Pipelines/Tasks/list.yaml
         #config:
           # inputs:
           # - name: source-code
@@ -73,7 +73,7 @@ jobs:
       # CLEAN THE SOURCE CODE
       #
 
-      - task: clean
+      #- task: clean
         #config: 
           # inputs:
           # - name: source-code
@@ -121,7 +121,7 @@ jobs:
       #         cd ../../..
       #         ./Pipelines/CI/Scripts/restore.sh 
 
-      - task: list
+      #- task: list
         #config:
           # inputs:
           # - name: cleaned-code

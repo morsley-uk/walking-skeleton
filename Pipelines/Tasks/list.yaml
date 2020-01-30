@@ -5,6 +5,7 @@ image_resource:
   type: docker-image
   source:
     repository: johnmorsley/alpine-with-utilities
+    #tag: 1.0
 
 inputs:
 - name: source-code
