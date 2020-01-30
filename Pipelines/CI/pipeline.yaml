@@ -54,62 +54,52 @@ jobs:
         file: source-code/Pipelines/CI/Tasks/tree-source.yaml
 
       #
+      # COMPILE THE SOURCE CODE
+      #
+
+      - task: all
+        file: source-code/Pipelines/CI/Tasks/all.yaml
+
+      #
+      # LIST BUILT CODE
+      #
+
+      - task: tree
+        file: built-code/Pipelines/CI/Tasks/tree-built.yaml
+
+        #
       # CLEAN THE SOURCE CODE
       #
 
-      - task: clean
-        file: source-code/Pipelines/CI/Tasks/clean.yaml
+      # - task: clean
+      #   file: source-code/Pipelines/CI/Tasks/clean.yaml
 
       #
       # LIST CLEANED CODE
       #
 
-      - task: tree
-        file: cleaned-code/Pipelines/CI/Tasks/tree-cleaned.yaml
+      # - task: tree
+      #   file: cleaned-code/Pipelines/CI/Tasks/tree-cleaned.yaml
 
       #
       # RESTORE THE DEPENDENCIES
       #
 
-      - task: restore
-        file: cleaned-code/Pipelines/CI/Tasks/restore.yaml
+      # - task: restore
+      #   file: cleaned-code/Pipelines/CI/Tasks/restore.yaml
 
       #
       # LIST RESTORERD CODE
       #
 
-      - task: tree
-        file: restored-code/Pipelines/CI/Tasks/tree-restored.yaml
+      # - task: tree
+      #   file: restored-code/Pipelines/CI/Tasks/tree-restored.yaml
 
       #
       # BUILD THE PROJECT
       #
 
-      - task: build
-        file: restored-code/Pipelines/CI/Tasks/build.yaml
-
       # - task: build
-      #   config: 
-      #     inputs:
-      #     - name: source-code
-      #     platform: linux
-      #     image_resource:
-      #       type: docker-image
-      #       source:
-      #         repository: mcr.microsoft.com/dotnet/core/sdk
-      #         tag: 3.1.101-bionic
-      #     #outputs:
-      #     #- name: restored-code
-      #     run:
-      #       path: sh
-      #       args:
-      #       - -exec
-      #       - |
-      #         cd source-code/Pipelines/CI/Scripts
-      #         chmod u+x build.sh
-      #         cd ../../..
-      #         ./Pipelines/CI/Scripts/build.sh 
-
-#  - task: build
+      #   file: restored-code/Pipelines/CI/Tasks/build.yaml
 
 #  - task: publish
