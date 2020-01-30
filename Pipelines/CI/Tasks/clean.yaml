@@ -19,9 +19,6 @@ run:
   - -exec
   - |
     ls -la
-#    pwd
-#    cd ../..
-#    pwd
     chmod u+x source-code/Pipelines/CI/Scripts/clean.sh
     bash source-code/Pipelines/CI/Scripts/clean.sh 
 
