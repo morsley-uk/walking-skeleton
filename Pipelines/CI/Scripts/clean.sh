@@ -8,9 +8,10 @@ header 'CLEAN STARTED'
 
 #echo $parent_path
 
-echo $pwd
+#echo $pwd
 
-#dotnet clean --verbosity normal --nologo
+cd ../../..
+dotnet clean --verbosity normal --nologo
 
 #find . -iname "bin" | xargs rm -rf
 #find . -iname "obj" | xargs rm -rf

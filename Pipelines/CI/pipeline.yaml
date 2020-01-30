@@ -61,6 +61,13 @@ jobs:
         file: source-code/Pipelines/CI/Tasks/clean.yaml
 
       #
+      # LIST SOURCE CODE
+      #
+
+      - task: tree
+        file: source-code/Pipelines/Tasks/tree.yaml
+
+      #
       # CLEAN THE SOURCE CODE
       #
 
