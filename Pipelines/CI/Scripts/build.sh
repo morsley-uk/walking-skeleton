@@ -6,6 +6,8 @@ source $common/header.sh
 
 header 'BUILD STARTED'
 
+cd restored-code
+
 dotnet build --verbosity normal --configuration Debug --no-restore
 
 header 'BUILD COMPLETED'
