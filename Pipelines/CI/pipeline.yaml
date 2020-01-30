@@ -76,14 +76,14 @@ jobs:
         config: 
           inputs:
           - name: source-code
+          outputs:
+          - name: cleaned-code
           platform: linux
           image_resource:
             type: docker-image
             source:
               repository: mcr.microsoft.com/dotnet/core/sdk
               tag: 3.1.101-bionic
-          #outputs:
-          #- name: cleaned-code
           run:
             path: sh
             args:
@@ -101,15 +101,15 @@ jobs:
       - task: restore
         config: 
           inputs:
-          - name: source-code
+          - name: cleaned-code
+          outputs:
+          - name: restored-code
           platform: linux
           image_resource:
             type: docker-image
             source:
               repository: mcr.microsoft.com/dotnet/core/sdk
               tag: 3.1.101-bionic
-          #outputs:
-          #- name: restored-code
           run:
             path: sh
             args:
@@ -120,31 +120,47 @@ jobs:
               cd ../../..
               ./Pipelines/CI/Scripts/restore.sh 
 
-      #
-      # BUILD THE PROJECT
-      #
-
-      - task: build
-        config: 
+      - task: list
+        config:
           inputs:
-          - name: source-code
+          - name: restored-code
           platform: linux
           image_resource:
             type: docker-image
             source:
-              repository: mcr.microsoft.com/dotnet/core/sdk
-              tag: 3.1.101-bionic
-          #outputs:
-          #- name: restored-code
+              repository: johnmorsley/alpine-with-utilities
           run:
             path: sh
             args:
             - -exec
             - |
-              cd source-code/Pipelines/CI/Scripts
-              chmod u+x build.sh
-              cd ../../..
-              ./Pipelines/CI/Scripts/build.sh 
+              tree
+
+      #
+      # BUILD THE PROJECT
+      #
+
+      # - task: build
+      #   config: 
+      #     inputs:
+      #     - name: source-code
+      #     platform: linux
+      #     image_resource:
+      #       type: docker-image
+      #       source:
+      #         repository: mcr.microsoft.com/dotnet/core/sdk
+      #         tag: 3.1.101-bionic
+      #     #outputs:
+      #     #- name: restored-code
+      #     run:
+      #       path: sh
+      #       args:
+      #       - -exec
+      #       - |
+      #         cd source-code/Pipelines/CI/Scripts
+      #         chmod u+x build.sh
+      #         cd ../../..
+      #         ./Pipelines/CI/Scripts/build.sh 
 
 #  - task: build
 
