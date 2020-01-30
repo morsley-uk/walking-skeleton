@@ -11,6 +11,7 @@ header 'CLEAN STARTED'
 #echo $pwd
 
 #cd ../../..
+pwd
 dotnet clean --verbosity normal --nologo
 
 find . -iname "bin" | xargs rm -rf
