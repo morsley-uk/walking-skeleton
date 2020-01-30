@@ -20,7 +20,6 @@ run:
   - |
     cd source-code/Pipelines/CI/Scripts
     chmod u+x clean.sh
-#    cd ../../..
     ./source-code/Pipelines/CI/Scripts/clean.sh 
 
 #run:
