@@ -6,17 +6,11 @@ source $common/header.sh
 
 header 'CLEAN STARTED'
 
-#echo $parent_path
-
-#echo $pwd
-
+ls -la
+cd source-code
 ls -la
 
-#cd ../../..
-#pwd
 #dotnet clean --verbosity normal --nologo
-
-
 
 find . -iname "bin" | xargs rm -rf
 find . -iname "obj" | xargs rm -rf
