@@ -10,11 +10,11 @@ header 'CLEAN STARTED'
 
 #echo $pwd
 
-cd ../../..
+#cd ../../..
 dotnet clean --verbosity normal --nologo
 
-#find . -iname "bin" | xargs rm -rf
-#find . -iname "obj" | xargs rm -rf
+find . -iname "bin" | xargs rm -rf
+find . -iname "obj" | xargs rm -rf
 
 #rm -r Published
 
