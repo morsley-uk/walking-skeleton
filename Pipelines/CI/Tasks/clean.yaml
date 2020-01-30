@@ -1,0 +1,53 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: mcr.microsoft.com/dotnet/core/sdk
+    tag: 3.1.101-bionic
+
+inputs:
+- name: source-code
+
+outputs:
+- name: cleaned-code
+
+run:
+  path: sh
+  args:
+  - -exec
+  - |
+    cd source-code/Pipelines/CI/Scripts
+    chmod u+x clean.sh
+#    cd ../../..
+    ./source-code/Pipelines/CI/Scripts/clean.sh 
+
+#run:
+#  path: sh
+#  args:
+#  - -exec
+#  - |
+#    tree
+
+# inputs:
+# - name: source-code
+
+# outputs:
+# - name: cleaned-code
+
+# platform: linux
+# image_resource:
+#   type: docker-image
+#   source:
+#     repository: mcr.microsoft.com/dotnet/core/sdk
+#     tag: 3.1.101-bionic
+# run:
+#   path: sh
+#   args:
+#   - -exec
+#   - |
+#     cd source-code/Pipelines/CI/Scripts
+#     chmod u+x clean.sh
+#     cd ../../..
+#     ./Pipelines/CI/Scripts/clean.sh 

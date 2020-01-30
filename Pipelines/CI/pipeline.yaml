@@ -50,10 +50,15 @@ jobs:
       # LIST SOURCE CODE
       #
 
-      # docker run -it johnmorsley/alpine-with-utilities ./bin/bash
-
       - task: tree
         file: source-code/Pipelines/Tasks/tree.yaml
+
+      #
+      # CLEAN THE SOURCE CODE
+      #
+
+      - task: clean
+        file: source-code/Pipelines/CI/Tasks/clean.yaml
 
       #
       # CLEAN THE SOURCE CODE
