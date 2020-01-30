@@ -98,32 +98,32 @@ jobs:
       # RESTORE THE DEPENDENCIES
       #
 
-      - task: restore
-        config: 
-          inputs:
-          - name: cleaned-code
-          outputs:
-          - name: restored-code
-          platform: linux
-          image_resource:
-            type: docker-image
-            source:
-              repository: mcr.microsoft.com/dotnet/core/sdk
-              tag: 3.1.101-bionic
-          run:
-            path: sh
-            args:
-            - -exec
-            - |
-              cd source-code/Pipelines/CI/Scripts
-              chmod u+x restore.sh
-              cd ../../..
-              ./Pipelines/CI/Scripts/restore.sh 
+      # - task: restore
+      #   config: 
+      #     inputs:
+      #     - name: cleaned-code
+      #     outputs:
+      #     - name: restored-code
+      #     platform: linux
+      #     image_resource:
+      #       type: docker-image
+      #       source:
+      #         repository: mcr.microsoft.com/dotnet/core/sdk
+      #         tag: 3.1.101-bionic
+      #     run:
+      #       path: sh
+      #       args:
+      #       - -exec
+      #       - |
+      #         cd cleaned-code/Pipelines/CI/Scripts
+      #         chmod u+x restore.sh
+      #         cd ../../..
+      #         ./Pipelines/CI/Scripts/restore.sh 
 
       - task: list
         config:
           inputs:
-          - name: restored-code
+          - name: cleaned-code
           platform: linux
           image_resource:
             type: docker-image

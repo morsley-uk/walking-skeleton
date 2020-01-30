@@ -13,6 +13,7 @@ header 'CLEAN STARTED'
 
 #rm -r Published
 
+dir
 mkdir Clean
 
 header 'CLEAN COMPLETED'
