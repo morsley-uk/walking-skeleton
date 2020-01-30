@@ -51,7 +51,7 @@ jobs:
       #
 
       - task: tree
-        file: source-code/Pipelines/Tasks/tree.yaml
+        file: source-code/Pipelines/CI/Tasks/tree-source.yaml
 
       #
       # CLEAN THE SOURCE CODE
@@ -65,21 +65,21 @@ jobs:
       #
 
       - task: tree
-        file: cleaned-code/Pipelines/Tasks/tree.yaml
+        file: cleaned-code/Pipelines/CI/Tasks/tree-cleaned.yaml
 
       #
       # RESTORE THE DEPENDENCIES
       #
 
-      - task: tree
-        file: cleaned-code/Pipelines/Tasks/restore.yaml
+      - task: restore
+        file: cleaned-code/Pipelines/CI/Tasks/restore.yaml
 
       #
       # LIST RESTORERD CODE
       #
 
       - task: tree
-        file: restored-code/Pipelines/Tasks/tree.yaml
+        file: restored-code/Pipelines/CI/Tasks/tree-restored.yaml
 
       # - task: restore
       #   config: 

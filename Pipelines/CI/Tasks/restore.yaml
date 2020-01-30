@@ -19,6 +19,6 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x cleaned-code/Pipelines/CI/Scripts/clean.sh
-    bash cleaned-code/Pipelines/CI/Scripts/clean.sh 
+    chmod u+x cleaned-code/Pipelines/CI/Scripts/restore.sh
+    bash cleaned-code/Pipelines/CI/Scripts/restore.sh 
     cp -a cleaned-code/. restored-code/
