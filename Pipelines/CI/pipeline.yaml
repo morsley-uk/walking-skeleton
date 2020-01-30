@@ -85,7 +85,7 @@ jobs:
       # BUILD THE PROJECT
       #
 
-      - task: tree
+      - task: build
         file: restored-code/Pipelines/CI/Tasks/build.yaml
 
       # - task: build
