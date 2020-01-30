@@ -53,46 +53,46 @@ jobs:
       # docker run -it johnmorsley/alpine-with-utilities ./bin/bash
 
       - task: list
-        config:
-          inputs:
-          - name: source-code
-          platform: linux
-          image_resource:
-            type: docker-image
-            source:
-              repository: johnmorsley/alpine-with-utilities
-          run:
-            path: sh
-            args:
-            - -exec
-            - |
-              tree
+        #config:
+        inputs:
+        - name: source-code
+        platform: linux
+        image_resource:
+          type: docker-image
+          source:
+            repository: johnmorsley/alpine-with-utilities
+        run:
+          path: sh
+          args:
+          - -exec
+          - |
+            tree
 
       #
       # CLEAN THE SOURCE CODE
       #
 
       - task: clean
-        config: 
-          inputs:
-          - name: source-code
-          outputs:
-          - name: cleaned-code
-          platform: linux
-          image_resource:
-            type: docker-image
-            source:
-              repository: mcr.microsoft.com/dotnet/core/sdk
-              tag: 3.1.101-bionic
-          run:
-            path: sh
-            args:
-            - -exec
-            - |
-              cd source-code/Pipelines/CI/Scripts
-              chmod u+x clean.sh
-              cd ../../..
-              ./Pipelines/CI/Scripts/clean.sh 
+        #config: 
+        inputs:
+        - name: source-code
+        outputs:
+        - name: cleaned-code
+        platform: linux
+        image_resource:
+          type: docker-image
+          source:
+            repository: mcr.microsoft.com/dotnet/core/sdk
+            tag: 3.1.101-bionic
+        run:
+          path: sh
+          args:
+          - -exec
+          - |
+            cd source-code/Pipelines/CI/Scripts
+            chmod u+x clean.sh
+            cd ../../..
+            ./Pipelines/CI/Scripts/clean.sh 
 
       #
       # RESTORE THE DEPENDENCIES
@@ -121,20 +121,20 @@ jobs:
       #         ./Pipelines/CI/Scripts/restore.sh 
 
       - task: list
-        config:
-          inputs:
-          - name: cleaned-code
-          platform: linux
-          image_resource:
-            type: docker-image
-            source:
-              repository: johnmorsley/alpine-with-utilities
-          run:
-            path: sh
-            args:
-            - -exec
-            - |
-              tree
+        #config:
+        inputs:
+        - name: cleaned-code
+        platform: linux
+        image_resource:
+          type: docker-image
+          source:
+            repository: johnmorsley/alpine-with-utilities
+        run:
+          path: sh
+          args:
+          - -exec
+          - |
+            tree
 
       #
       # BUILD THE PROJECT
