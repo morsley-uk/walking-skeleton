@@ -10,7 +10,7 @@ ls -la
 cd source-code
 ls -la
 
-#dotnet clean --verbosity normal --nologo
+dotnet clean --verbosity normal --nologo
 
 find . -iname "bin" | xargs rm -rf
 find . -iname "obj" | xargs rm -rf

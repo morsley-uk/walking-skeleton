@@ -8,10 +8,10 @@ image_resource:
     tag: 3.1.101-bionic
 
 inputs:
-- name: source-code
+- name: cleaned-code
 
 outputs:
-- name: cleaned-code
+- name: restored-code
 
 run:
   path: sh
@@ -19,6 +19,6 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x source-code/Pipelines/CI/Scripts/clean.sh
-    bash source-code/Pipelines/CI/Scripts/clean.sh 
-    cp -a source-code/. cleaned-code/
+    chmod u+x cleaned-code/Pipelines/CI/Scripts/clean.sh
+    bash cleaned-code/Pipelines/CI/Scripts/clean.sh 
+    cp -a cleaned-code/. restored-code/

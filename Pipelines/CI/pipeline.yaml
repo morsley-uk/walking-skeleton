@@ -61,41 +61,25 @@ jobs:
         file: source-code/Pipelines/CI/Tasks/clean.yaml
 
       #
-      # LIST SOURCE CODE
+      # LIST CLEANED CODE
       #
 
       - task: tree
         file: cleaned-code/Pipelines/Tasks/tree.yaml
 
       #
-      # CLEAN THE SOURCE CODE
-      #
-
-      #- task: clean
-        #config: 
-          # inputs:
-          # - name: source-code
-          # outputs:
-          # - name: cleaned-code
-          # platform: linux
-          # image_resource:
-          #   type: docker-image
-          #   source:
-          #     repository: mcr.microsoft.com/dotnet/core/sdk
-          #     tag: 3.1.101-bionic
-          # run:
-          #   path: sh
-          #   args:
-          #   - -exec
-          #   - |
-          #     cd source-code/Pipelines/CI/Scripts
-          #     chmod u+x clean.sh
-          #     cd ../../..
-          #     ./Pipelines/CI/Scripts/clean.sh 
-
-      #
       # RESTORE THE DEPENDENCIES
       #
+
+      - task: tree
+        file: cleaned-code/Pipelines/Tasks/restore.yaml
+
+      #
+      # LIST RESTORERD CODE
+      #
+
+      - task: tree
+        file: restored-code/Pipelines/Tasks/tree.yaml
 
       # - task: restore
       #   config: 

@@ -6,8 +6,10 @@ source $common/header.sh
 
 header 'RESTORE STARTED'
 
-#dotnet restore --verbosity normal
+ls -la
+cd cleaned-code
+ls -la
 
-mkdir Restore
+dotnet restore --verbosity normal
 
 header 'RESTORE COMPLETED'
