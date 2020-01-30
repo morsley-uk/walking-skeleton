@@ -10,9 +10,13 @@ header 'CLEAN STARTED'
 
 #echo $pwd
 
+ls -la
+
 #cd ../../..
-pwd
-dotnet clean --verbosity normal --nologo
+#pwd
+#dotnet clean --verbosity normal --nologo
+
+
 
 find . -iname "bin" | xargs rm -rf
 find . -iname "obj" | xargs rm -rf
