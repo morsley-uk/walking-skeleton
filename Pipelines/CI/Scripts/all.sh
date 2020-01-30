@@ -6,16 +6,15 @@ source $common/header.sh
 
 cd source-code
 
+###############################################################################
+
 header 'CLEAN STARTED'
 
 dotnet clean --verbosity normal --nologo
 
-find . -iname "bin" | xargs rm -rf
-find . -iname "obj" | xargs rm -rf
-
-#rm -r Published
-
 header 'CLEAN COMPLETED'
+
+###############################################################################
 
 header 'RESTORE STARTED'
 
@@ -23,8 +22,20 @@ dotnet restore --verbosity normal
 
 header 'RESTORE COMPLETED'
 
+###############################################################################
+
 header 'BUILD STARTED'
 
-dotnet build --verbosity normal --configuration Debug --no-restore
+dotnet build --verbosity normal --configuration Release --no-restore
 
 header 'BUILD COMPLETED'
+
+###############################################################################
+
+header 'PUBLISH STARTED'
+
+dotnet publish --verbosity normal --configuration Release --no-build --no-restore --output Published --nologo
+
+header 'PUBLISH COMPLETED'
+
+###############################################################################
