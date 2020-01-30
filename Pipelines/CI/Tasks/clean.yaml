@@ -18,9 +18,8 @@ run:
   args:
   - -exec
   - |
-    cd source-code/Pipelines/CI/Scripts
-    chmod u+x clean.sh
-    ./source-code/Pipelines/CI/Scripts/clean.sh 
+    chmod u+x source-code/Pipelines/CI/Scripts/clean.sh
+    bash source-code/Pipelines/CI/Scripts/clean.sh 
 
 #run:
 #  path: sh
