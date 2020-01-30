@@ -21,6 +21,7 @@ run:
     ls -la
     chmod u+x source-code/Pipelines/CI/Scripts/clean.sh
     bash source-code/Pipelines/CI/Scripts/clean.sh 
+    cp -a /source-code/. /cleaned-code/
 
 #run:
 #  path: sh
