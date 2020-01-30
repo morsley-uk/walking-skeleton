@@ -6,7 +6,7 @@ source $common/header.sh
 
 header 'CLEAN STARTED'
 
-echo parent_path
+echo $parent_path
 
 #dotnet clean --verbosity normal --nologo
 
