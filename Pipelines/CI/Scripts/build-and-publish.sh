@@ -4,15 +4,13 @@ parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 common="$parent_path"/../../Scripts
 source $common/header.sh
 
-ls -la
 cd source-master
-ls -la
 
 ###############################################################################
 
 header 'CLEAN STARTED'
 
-#dotnet clean --verbosity normal --nologo
+dotnet clean --verbosity normal --nologo
 
 header 'CLEAN COMPLETED'
 
