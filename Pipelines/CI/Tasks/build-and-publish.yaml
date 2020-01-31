@@ -21,4 +21,4 @@ run:
     ls -la
     chmod u+x source-master/Pipelines/CI/Scripts/build-and-publish.sh
     bash source-master/Pipelines/CI/Scripts/build-and-publish.sh 
-    cp -a source-master/. published/
+    cp -a source-master/Published. published/
