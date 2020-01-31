@@ -9,7 +9,7 @@ resources:
   # GET THE SOURCE CODE
   #
 
-  - name: source-code
+  - name: source-master
     type: git
     icon: github-circle
     # check_every: 5 # Minutes
@@ -43,29 +43,29 @@ jobs:
 
     plan:
 
-      - get: source-code
+      - get: source-master
         trigger: true
 
       #
-      # LIST SOURCE CODE
+      # LIST SOURCE CODE - MASTER
       #
 
       - task: tree
-        file: source-code/Pipelines/CI/Tasks/tree-source.yaml
+        file: source-master/Pipelines/CI/Tasks/tree-source-master.yaml
 
       #
       # COMPILE THE SOURCE CODE
       #
 
-      - task: all
-        file: source-code/Pipelines/CI/Tasks/all.yaml
+      - task: build-and-publish
+        file: source-master/Pipelines/CI/Tasks/build-and-publish.yaml
 
       #
-      # LIST BUILT CODE
+      # LIST PUBLISHED
       #
 
       - task: tree
-        file: built-code/Pipelines/CI/Tasks/tree-built.yaml
+        file: published/Pipelines/CI/Tasks/tree-published.yaml
 
         #
       # CLEAN THE SOURCE CODE

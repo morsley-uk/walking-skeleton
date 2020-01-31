@@ -8,10 +8,10 @@ image_resource:
     tag: 3.1.101-bionic
 
 inputs:
-- name: source-code
+- name: source-master
 
 outputs:
-- name: built-code
+- name: published
 
 run:
   path: sh
@@ -19,6 +19,6 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x source-code/Pipelines/CI/Scripts/all.sh
-    bash source-code/Pipelines/CI/Scripts/all.sh 
-    cp -a source-code/. built-code/
+    chmod u+x source-master/Pipelines/CI/Scripts/build-and-publish.sh
+    bash source-master/Pipelines/CI/Scripts/build-and-publish.sh 
+    cp -a source-master/. published/
