@@ -67,12 +67,12 @@ jobs:
       - task: tree
         file: source-master/Pipelines/CI/Tasks/tree-published.yaml
 
-        #
-      # CLEAN THE SOURCE CODE
+      #
+      # TESTS
       #
 
-      # - task: clean
-      #   file: source-code/Pipelines/CI/Tasks/clean.yaml
+      # - task: tests
+      #   file: source-code/Pipelines/CI/Tasks/tests.yaml
 
       #
       # LIST CLEANED CODE
