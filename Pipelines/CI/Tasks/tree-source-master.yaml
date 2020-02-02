@@ -8,7 +8,7 @@ image_resource:
     #tag: 1.0
 
 inputs:
-- name: built-code
+- name: source-master
 
 run:
   path: sh
