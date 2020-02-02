@@ -4,7 +4,7 @@ parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 common="$parent_path"/../../Scripts
 source $common/header.sh
 
-cd source-master/Tests/Unit
+cd source-master
 
 ###############################################################################
 
@@ -13,16 +13,20 @@ header 'TESTS STARTED'
 for d in */; do
 
 	echo "$d"
-    cd "$d"
-    ls -la
+    #cd "$d"
+
+    #ls -la
+
     projectFile=$(find . -type f -name "*.csproj")
+
     echo $projectFile
-    
+    #cd "$projectFile"
+
     #echo "-------------------------------------------------------------------------------"
     #printf "\n"
     #echo "---------- TESTS INITIATED ----------"
 
-    # dotnet test $projectFile --verbosity quiet \
+    # dotnet test  --verbosity quiet \
     #                          --no-build \
     #                          --no-restore \
     #                          --results-directory TestResults \
@@ -35,8 +39,6 @@ for d in */; do
     #printf "\n"
     #printf "\n"
     #printf "\n"
-
-    cd ..
 
 done
 
