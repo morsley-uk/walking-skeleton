@@ -12,26 +12,26 @@ header 'TESTS STARTED'
 
 for d in */; do
 
-	echo "$d"
+	#echo "$d"
     #cd "$d"
 
     #ls -la
 
     projectFile=$(find . -type f -name "*.csproj")
 
-    echo $projectFile
+    #echo $projectFile
     #cd "$projectFile"
 
     #echo "-------------------------------------------------------------------------------"
     #printf "\n"
     #echo "---------- TESTS INITIATED ----------"
 
-    # dotnet test  --verbosity quiet \
-    #                          --no-build \
-    #                          --no-restore \
-    #                          --results-directory TestResults \
-    #                          --logger trx \
-    #                          --configuration Release
+    dotnet test $projectFile --verbosity quiet \
+                             --no-build \
+                             --no-restore \
+                             --results-directory TestResults \
+                             --logger trx \
+                             --configuration Release
 
     #echo "---------- TESTS FINISHED ----------"
     #printf "\n"
