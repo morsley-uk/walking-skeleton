@@ -71,8 +71,8 @@ jobs:
       # TESTS
       #
 
-      # - task: tests
-      #   file: source-code/Pipelines/CI/Tasks/tests.yaml
+      - task: tests
+        file: source-master/Pipelines/CI/Tasks/tests.yaml
 
       #
       # LIST CLEANED CODE
