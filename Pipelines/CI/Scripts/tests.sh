@@ -11,28 +11,30 @@ cd source-master/Tests/Unit
 header 'TESTS STARTED'
 
 for d in */; do
-	#echo "$d"
+
+	echo "$d"
     cd "$d"
-    #ls -la
+    ls -la
     projectFile=$(find . -type f -name "*.csproj")
-    #echo $projectFile
-    echo "-------------------------------------------------------------------------------"
-    printf "\n"
-    echo "---------- TESTS INITIATED ----------"
+    echo $projectFile
+    
+    #echo "-------------------------------------------------------------------------------"
+    #printf "\n"
+    #echo "---------- TESTS INITIATED ----------"
 
-    dotnet test $projectFile --verbosity quiet \
-                             --no-build \
-                             --no-restore \
-                             --results-directory TestResults \
-                             --logger trx \
-                             --configuration Release
+    # dotnet test $projectFile --verbosity quiet \
+    #                          --no-build \
+    #                          --no-restore \
+    #                          --results-directory TestResults \
+    #                          --logger trx \
+    #                          --configuration Release
 
-    echo "---------- TESTS FINISHED ----------"
-    printf "\n"
-    echo "-------------------------------------------------------------------------------"
-    printf "\n"
-    printf "\n"
-    printf "\n"
+    #echo "---------- TESTS FINISHED ----------"
+    #printf "\n"
+    #echo "-------------------------------------------------------------------------------"
+    #printf "\n"
+    #printf "\n"
+    #printf "\n"
 
     cd ..
 
