@@ -65,7 +65,7 @@ jobs:
       #
 
       - task: tree
-        file: published/Pipelines/CI/Tasks/tree-published.yaml
+        file: source-master/Pipelines/CI/Tasks/tree-published.yaml
 
         #
       # CLEAN THE SOURCE CODE
