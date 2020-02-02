@@ -58,7 +58,7 @@ jobs:
       #
 
       - task: build-and-publish
-        file: source-master/Pipelines/CI/Tasks/build-and-publish.yaml
+        file: source-master/Pipelines/CI/Tasks/clean-restore-build-publish.yaml
 
       #
       # LIST PUBLISHED
