@@ -18,7 +18,7 @@ for d in */; do
     #ls -la
 
     projectFile=$(find . -type f -name "*.csproj")
-    #echo $projectFile
+    echo $projectFile
     #cd "$projectFile"
 
     #echo "-------------------------------------------------------------------------------"
