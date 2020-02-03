@@ -19,6 +19,6 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x source-master/Pipelines/CI/Scripts/test.sh
-    bash source-master/Pipelines/CI/Scripts/test.sh 
-    cp -a source-master/TestResults/. test-results/
+    chmod u+x built/Pipelines/CI/Scripts/test.sh
+    bash built/Pipelines/CI/Scripts/test.sh 
+    cp -a built/TestResults/. test-results/
