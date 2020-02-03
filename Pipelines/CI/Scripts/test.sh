@@ -25,12 +25,14 @@ for d in */; do
     #printf "\n"
     #echo "---------- TESTS INITIATED ----------"
 
-    dotnet test $projectFile --verbosity normal \
-                             --no-build \
-                             --no-restore \
-                             --results-directory built/TestResults \
-                             --logger trx \
-                             --configuration Release
+    dotnet test --help
+
+    #dotnet test $projectFile --verbosity normal \
+    #                         --no-build \
+    #                         --no-restore \
+    #                         --results-directory built/TestResults \
+    #                         --logger trx \
+    #                         --configuration Release
 
     #echo "---------- TESTS FINISHED ----------"
     #printf "\n"
