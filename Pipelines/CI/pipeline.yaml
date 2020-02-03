@@ -78,8 +78,8 @@ jobs:
       # LIST TEST RESULTS
       #
 
-      #- task: tree
-      #  file: source-master/Pipelines/CI/Tasks/tree-test-results.yaml
+      - task: tree
+        file: source-master/Pipelines/CI/Tasks/tree-test-results.yaml
 
       #
       # LIST CLEANED CODE
