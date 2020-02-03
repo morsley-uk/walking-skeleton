@@ -28,7 +28,7 @@ for d in */; do
     dotnet test $projectFile --verbosity normal \
                              --no-build \
                              --no-restore \
-                             --results-directory TestResults \
+                             --results-directory built/TestResults \
                              --logger trx \
                              --configuration Release
 
