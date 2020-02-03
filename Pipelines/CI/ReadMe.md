@@ -1,5 +1,5 @@
 ```
-fly --target lh login --username:test --password:test --concourse-url http://localhost:8080
+fly --target lh login --username test --password test --concourse-url http://localhost:8080
 ```
 
 ```
