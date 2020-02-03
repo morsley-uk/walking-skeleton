@@ -5,3 +5,7 @@ fly --target lh login --username test --password test --concourse-url http://loc
 ```
 fly --target lh set-pipeline --config pipeline.yaml --pipeline walking-skeleton
 ```
+
+```
+fly --target lh destroy-pipeline --pipeline walking-skeleton
+```

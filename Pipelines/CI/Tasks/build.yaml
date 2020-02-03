@@ -11,7 +11,7 @@ inputs:
 - name: source-master
 
 outputs:
-- name: published
+- name: built
 
 run:
   path: sh
@@ -19,6 +19,6 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh
-    bash source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh 
-    cp -a source-master/Published/. published/
+    chmod u+x source-master/Pipelines/CI/Scripts/build.sh
+    bash source-master/Pipelines/CI/Scripts/build.sh 
+    cp -a source-master/. built/
