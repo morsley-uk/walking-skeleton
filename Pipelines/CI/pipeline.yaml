@@ -57,15 +57,15 @@ jobs:
       #  BUILD THE SOURCE CODE
       #
 
-      #- task: build
-      #  file: source-master/Pipelines/CI/Tasks/build.yaml
+      - task: build
+        file: source-master/Pipelines/CI/Tasks/build.yaml
 
       #
       # LIST BUILT
       #
 
-      #- task: tree
-      #  file: source-master/Pipelines/CI/Tasks/tree-built.yaml
+      - task: tree
+        file: source-master/Pipelines/CI/Tasks/tree-built.yaml
 
       #
       # TESTS
