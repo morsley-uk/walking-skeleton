@@ -21,4 +21,4 @@ run:
     ls -la
     chmod u+x built/Pipelines/CI/Scripts/test.sh
     bash built/Pipelines/CI/Scripts/test.sh 
-    cp -a built/TestResults/. test-results/
+#    cp -a built/TestResults/. test-results/
