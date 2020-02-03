@@ -31,11 +31,3 @@ dotnet build --verbosity normal --configuration Release --no-restore
 header 'BUILD COMPLETED'
 
 ###############################################################################
-
-header 'PUBLISH STARTED'
-
-dotnet publish --verbosity normal --configuration Release --no-build --no-restore --output Published --nologo
-
-header 'PUBLISH COMPLETED'
-
-###############################################################################

@@ -68,11 +68,11 @@ jobs:
         file: source-master/Pipelines/CI/Tasks/tree-built.yaml
 
       #
-      # TESTS
+      # TEST
       #
 
-      #- task: tests
-      #  file: source-master/Pipelines/CI/Tasks/tests.yaml
+      - task: test
+        file: source-master/Pipelines/CI/Tasks/test.yaml
 
       #
       # LIST TEST RESULTS

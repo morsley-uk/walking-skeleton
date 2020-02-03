@@ -8,7 +8,7 @@ image_resource:
     tag: 3.1.101-bionic
 
 inputs:
-- name: source-master
+- name: built
 
 outputs:
 - name: test-results
@@ -19,6 +19,6 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x source-master/Pipelines/CI/Scripts/tests.sh
-    bash source-master/Pipelines/CI/Scripts/tests.sh 
+    chmod u+x source-master/Pipelines/CI/Scripts/test.sh
+    bash source-master/Pipelines/CI/Scripts/test.sh 
     cp -a source-master/TestResults/. test-results/
