@@ -51,9 +51,7 @@ jobs:
       #
 
       - task: tree
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        params:
-          FOLDER: source-master
+        file: source-master/Pipelines/CI/Tasks/tree-source-master.yaml
 
       #
       #  BUILD THE SOURCE CODE
