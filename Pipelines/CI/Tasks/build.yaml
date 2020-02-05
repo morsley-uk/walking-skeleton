@@ -20,10 +20,11 @@ run:
   args:
   - -exec
   - |
-    ls -la
+#    ls -la
     chmod u+x source-master/Pipelines/CI/Scripts/build.sh
     bash source-master/Pipelines/CI/Scripts/build.sh 
-    cp -a source-master/. built/
-    chmod u+x built/Pipelines/CI/Scripts/test.sh
-    bash built/Pipelines/CI/Scripts/test.sh 
+    cp -r source-master/ built/
+#    cp -a source-master/. built/
+#    chmod u+x built/Pipelines/CI/Scripts/test.sh
+#    bash built/Pipelines/CI/Scripts/test.sh 
 #    cp -a built/TestResults/. test-results/
