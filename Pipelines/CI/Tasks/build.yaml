@@ -6,14 +6,15 @@ image_resource:
   source:
     repository: mcr.microsoft.com/dotnet/core/sdk
 #    tag: 3.1.101-alpine
-    tag: 3.1.101-buster
-#    tag: 3.1.101-bionic
+#    tag: 3.1.101-buster
+    tag: 3.1.101-bionic
 
 inputs:
 - name: source-master
 
 outputs:
-- name: built
+- name: source-master
+#- name: built
 
 run:
   path: sh
@@ -23,7 +24,7 @@ run:
 #    ls -la
     chmod u+x source-master/Pipelines/CI/Scripts/build.sh
     bash source-master/Pipelines/CI/Scripts/build.sh 
-    cp -r source-master/ built/
+#    cp -r source-master/ built/
 #    cp -a source-master/. built/
 #    chmod u+x built/Pipelines/CI/Scripts/test.sh
 #    bash built/Pipelines/CI/Scripts/test.sh 

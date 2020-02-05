@@ -4,7 +4,8 @@ parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 common="$parent_path"/../../Scripts
 source $common/header.sh
 
-cd built/Tests/Unit
+#cd built/Tests/Unit
+cd source-master/Tests/Unit
 
 cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
