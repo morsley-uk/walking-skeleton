@@ -11,21 +11,21 @@ image_resource:
 
 #inputs:
 #- name: source-master
-
-#outputs:
-#- name: source-master
 #- name: built
 
+#outputs:
+#- name: test-results
+
 input_mapping:
-  repo: source-master
+  repo: built
   version: latest-version
 output_mapping:
-  workspace: built
-
+  workspace: tested
+  
 run:
   path: sh
   args:
   - -exec
   - |
-    chmod u+x source-master/Pipelines/CI/Scripts/build.sh
-    bash source-master/Pipelines/CI/Scripts/build.sh
+    chmod u+x built/Pipelines/CI/Scripts/unit-tests.sh
+    bash built/Pipelines/CI/Scripts/unit-tests.sh
