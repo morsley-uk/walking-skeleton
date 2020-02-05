@@ -6,43 +6,52 @@ source $common/header.sh
 
 cd built/Tests/Unit
 
+cd Morsley.UK.Walking.Skeleton.API.UnitTests
+
+dotnet test --verbosity=normal \
+            --no-build \
+            --no-restore \
+            --results-directory=built/TestResults \
+            --logger=trx \
+            --configuration=Release
+
 ###############################################################################
 
-header 'TESTS STARTED'
+# header 'TESTS STARTED'
 
-for d in */; do
+# for d in */; do
 
-    #echo "$d"
-    #cd "$d"
+#     #echo "$d"
+#     #cd "$d"
 
-    #ls -la
+#     #ls -la
 
-    projectFile=$(find . -type f -name "*.csproj")
-    echo $projectFile
-    #cd "$projectFile"
+#     projectFile=$(find . -type f -name "*.csproj")
+#     echo $projectFile
+#     #cd "$projectFile"
 
-    #echo "-------------------------------------------------------------------------------"
-    #printf "\n"
-    #echo "---------- TESTS INITIATED ----------"
+#     #echo "-------------------------------------------------------------------------------"
+#     #printf "\n"
+#     #echo "---------- TESTS INITIATED ----------"
 
-    #dotnet test --help
+#     #dotnet test --help
 
-    dotnet test $projectFile --verbosity=normal \
-                             --no-build \
-                             --no-restore \
-                             --results-directory=built/TestResults \
-                             --logger=trx \
-                             --configuration=Release
+#     dotnet test $projectFile --verbosity=normal \
+#                              --no-build \
+#                              --no-restore \
+#                              --results-directory=built/TestResults \
+#                              --logger=trx \
+#                              --configuration=Release
 
-    #echo "---------- TESTS FINISHED ----------"
-    #printf "\n"
-    #echo "-------------------------------------------------------------------------------"
-    #printf "\n"
-    #printf "\n"
-    #printf "\n"
+#     #echo "---------- TESTS FINISHED ----------"
+#     #printf "\n"
+#     #echo "-------------------------------------------------------------------------------"
+#     #printf "\n"
+#     #printf "\n"
+#     #printf "\n"
 
-done
+# done
 
-header 'TESTS COMPLETED'
+# header 'TESTS COMPLETED'
 
 ###############################################################################
