@@ -50,7 +50,7 @@ jobs:
       # LIST SOURCE CODE - MASTER
       #
 
-      - task: tree
+      - task: tree-source-master
         file: source-master/Pipelines/CI/Tasks/tree-source-master.yaml
 
       #
@@ -64,21 +64,21 @@ jobs:
       # LIST BUILT
       #
 
-      - task: tree
+      - task: tree-built
         file: source-master/Pipelines/CI/Tasks/tree-built.yaml
 
       #
-      # TEST
+      # RUN UNIT TESTs
       #
 
-      - task: test
+      - task: unit tests
         file: source-master/Pipelines/CI/Tasks/test.yaml
 
       #
-      # LIST TEST RESULTS
+      # LIST UNIT TEST RESULTS
       #
 
-      - task: tree
+      - task: tree-unit-tests-results
         file: source-master/Pipelines/CI/Tasks/tree-test-results.yaml
 
       #
