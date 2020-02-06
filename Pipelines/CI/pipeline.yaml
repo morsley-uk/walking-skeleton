@@ -50,7 +50,7 @@ jobs:
       # LIST SOURCE CODE - MASTER
       #
 
-      - task: tree
+      - task: tree-source
         file: source-master/Pipelines/CI/Tasks/tree.yaml
         input_mapping: { folder: source-master }
 
@@ -58,15 +58,18 @@ jobs:
       #  BUILD THE SOURCE CODE
       #
 
-      #- task: build
-      #  file: source-master/Pipelines/CI/Tasks/build.yaml
-
+      - task: build
+        file: source-master/Pipelines/CI/Tasks/build.yaml
+        input_mapping: { source: source-master }
+        output_mapping: { built: source-master }
+        
       #
       # LIST BUILT
       #
 
-      #- task: tree-built
-      #  file: source-master/Pipelines/CI/Tasks/tree-built.yaml
+      - task: tree-built
+        file: source-master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: source-master }
 
       #
       # RUN UNIT TESTs
