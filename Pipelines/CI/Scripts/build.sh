@@ -31,3 +31,7 @@ dotnet build --verbosity normal --configuration Release --no-restore
 header 'BUILD COMPLETED'
 
 ###############################################################################
+
+cd ..
+
+cp -r source/ built/
