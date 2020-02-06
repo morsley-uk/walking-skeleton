@@ -36,4 +36,4 @@ cd ..
 
 ls -la
 
-cp -r /source/. /built/
+cp -r source/. built/
