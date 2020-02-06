@@ -8,12 +8,11 @@ image_resource:
     #tag: 1.0
 
 inputs:
-- name: source-master
+- name: folder
 
 run:
   path: sh
   args:
   - -exec
   - |
-    echo $FOLDER
-#    tree
+    tree

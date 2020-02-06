@@ -50,36 +50,37 @@ jobs:
       # LIST SOURCE CODE - MASTER
       #
 
-      - task: tree-source-master
-        file: source-master/Pipelines/CI/Tasks/tree-source-master.yaml
+      - task: tree
+        file: source-master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: source-master }
 
       #
       #  BUILD THE SOURCE CODE
       #
 
-      - task: build
-        file: source-master/Pipelines/CI/Tasks/build.yaml
+      #- task: build
+      #  file: source-master/Pipelines/CI/Tasks/build.yaml
 
       #
       # LIST BUILT
       #
 
-      - task: tree-built
-        file: source-master/Pipelines/CI/Tasks/tree-built.yaml
+      #- task: tree-built
+      #  file: source-master/Pipelines/CI/Tasks/tree-built.yaml
 
       #
       # RUN UNIT TESTs
       #
 
-      - task: unit tests
-        file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
+      #- task: unit tests
+      #  file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
 
       #
       # LIST UNIT TEST RESULTS
       #
 
-      - task: tree-unit-tested
-        file: source-master/Pipelines/CI/Tasks/tree-unit-tested.yaml
+      #- task: tree-unit-tested
+      #  file: source-master/Pipelines/CI/Tasks/tree-unit-tested.yaml
 
       #
       # LIST CLEANED CODE
