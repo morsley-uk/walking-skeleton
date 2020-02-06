@@ -62,7 +62,7 @@ jobs:
         file: source-master/Pipelines/CI/Tasks/build.yaml
         input_mapping: { source: source-master }
         output_mapping: { built: source-master }
-        
+
       #
       # LIST BUILT
       #
@@ -75,15 +75,18 @@ jobs:
       # RUN UNIT TESTs
       #
 
-      #- task: unit tests
-      #  file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
+      - task: unit tests
+        file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
+        input_mapping: { built: source-master }
+        output_mapping: { tested: source-master }
 
       #
       # LIST UNIT TEST RESULTS
       #
 
-      #- task: tree-unit-tested
-      #  file: source-master/Pipelines/CI/Tasks/tree-unit-tested.yaml
+      - task: tree-unit-tested
+        file: source-master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: source-master }
 
       #
       # LIST CLEANED CODE

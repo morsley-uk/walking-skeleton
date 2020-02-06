@@ -5,7 +5,7 @@ common="$parent_path"/../../Scripts
 source $common/header.sh
 
 #cd built/Tests/Unit
-cd source-master/Tests/Unit
+cd built/Tests/Unit
 
 cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
@@ -15,6 +15,12 @@ dotnet test --verbosity=normal \
             --results-directory=built/TestResults \
             --logger=trx \
             --configuration=Release
+
+cd ../../../..
+
+ls -la
+
+cp -r built/. tested/
 
 ###############################################################################
 
