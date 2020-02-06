@@ -34,4 +34,6 @@ header 'BUILD COMPLETED'
 
 cd ..
 
-cp -r source/ built/
+ls -la
+
+cp -r /source/. /built/
