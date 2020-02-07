@@ -5,7 +5,8 @@ common="$parent_path"/../../Scripts
 source $common/header.sh
 
 #cd built/Tests/Unit
-cd built/Tests/Unit
+#cd built/Tests/Unit
+cd source/Tests/Unit
 
 cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
