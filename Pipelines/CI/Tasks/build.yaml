@@ -18,7 +18,6 @@ run:
   args:
   - -exec
   - |
-    timedatectl set-local-rtc 1
     apt update
     apt upgrade -y
     apt install rsync -y
