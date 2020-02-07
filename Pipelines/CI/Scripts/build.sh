@@ -34,6 +34,8 @@ header 'BUILD COMPLETED'
 
 cd ..
 
-ls -la
+#ls -la
 
-cp -r source/. built/
+#cp -r source/. built/
+
+rsyncc -a source/ built/
