@@ -18,8 +18,7 @@ run:
   args:
   - -exec
   - |
-    apt update
-    apt upgrade -y
-    apt install rsync -y
     chmod u+x source/Pipelines/CI/Scripts/build.sh
     bash source/Pipelines/CI/Scripts/build.sh
+    chmod u+x source/Pipelines/CI/Scripts/unit-tests.sh
+    bash source/Pipelines/CI/Scripts/unit-tests.sh

@@ -32,10 +32,10 @@ header 'BUILD COMPLETED'
 
 ###############################################################################
 
-cd ..
+#cd ..
 
 #ls -la
 
 #cp -r source/. built/
 
-rsync -a source/ built/
+#rsync -a source/ built/

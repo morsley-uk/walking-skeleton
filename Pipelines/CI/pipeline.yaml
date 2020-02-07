@@ -67,26 +67,26 @@ jobs:
       # LIST BUILT
       #
 
-      - task: tree-built
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: source-master }
+      # - task: tree-built
+      #   file: source-master/Pipelines/CI/Tasks/tree.yaml
+      #   input_mapping: { folder: source-master }
 
       #
       # RUN UNIT TESTs
       #
 
-      - task: unit tests
-        file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
-        input_mapping: { built: source-master }
-        output_mapping: { tested: source-master }
+      # - task: unit tests
+      #   file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
+      #   input_mapping: { built: source-master }
+      #   output_mapping: { tested: source-master }
 
       #
       # LIST UNIT TEST RESULTS
       #
 
-      - task: tree-unit-tested
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: source-master }
+      # - task: tree-unit-tested
+      #   file: source-master/Pipelines/CI/Tasks/tree.yaml
+      #   input_mapping: { folder: source-master }
 
       #
       # LIST CLEANED CODE

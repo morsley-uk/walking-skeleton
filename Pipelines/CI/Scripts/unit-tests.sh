@@ -16,11 +16,11 @@ dotnet test --verbosity=normal \
             --logger=trx \
             --configuration=Release
 
-cd ../../../..
+#cd ../../../..
 
-ls -la
+#ls -la
 
-cp -r built/. tested/
+#cp -r built/. tested/
 
 ###############################################################################
 
