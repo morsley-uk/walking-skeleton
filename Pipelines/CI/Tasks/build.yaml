@@ -19,7 +19,7 @@ run:
   - -exec
   - |
     apt update
-    apt upgrade
-    apt install rsync
+    apt upgrade -y
+    apt install rsync -y
     chmod u+x source/Pipelines/CI/Scripts/build.sh
     bash source/Pipelines/CI/Scripts/build.sh
