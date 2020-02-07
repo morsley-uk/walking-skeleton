@@ -38,4 +38,4 @@ cd ..
 
 #cp -r source/. built/
 
-rsyncc -a source/ built/
+rsync -a source/ built/
