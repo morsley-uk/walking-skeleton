@@ -91,9 +91,9 @@ jobs:
       #
 
       - task: publish
-        file: source-master/Pipelines/CI/Tasks/publis.yaml
-        input_mapping: { source: source-master }
-        output_mapping: { source: source-master }
+        file: source-master/Pipelines/CI/Tasks/publish.yaml
+        input_mapping: { tested: source-master }
+        output_mapping: { tested: source-master }
 
       #
       # TREE PUBLISHED
