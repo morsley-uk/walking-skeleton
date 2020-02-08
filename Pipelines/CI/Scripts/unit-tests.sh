@@ -16,8 +16,9 @@ dotnet test --configuration=Release \
             --results-directory=built/TestResults \
             --logger=trx \
             --no-build \
-            --no-restore \
-            --verbosity=normal
+            --no-restore 
+#\
+#            --verbosity=normal
 
 #dotnet test --verbosity=detailed \
 #            --no-build \
