@@ -4,7 +4,7 @@
 
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 ROOT="$PARENT_PATH"/../../..
-SCRIPTS="$ROOT"/Scripts
+SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
 cd built
