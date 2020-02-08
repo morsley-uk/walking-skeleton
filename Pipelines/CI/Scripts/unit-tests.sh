@@ -2,9 +2,9 @@
 
 #set -x
 
-parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-common="$parent_path"/../../Scripts
-source $common/header.sh
+PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
+ROOT="$PARENT_PATH"/../../Scripts
+source $ROOT/header.sh
 
 cd built
 
@@ -30,7 +30,7 @@ for d in */; do
     dotnet test $projectFile --configuration=Release \
                              --no-build \
                              --no-restore \
-                             --results-directory=$parent_path/built/TestResults \
+                             --results-directory=$ROOT/TestResults/Unit \
                              --logger=trx \
                              --verbosity=normal
 
