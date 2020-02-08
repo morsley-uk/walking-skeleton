@@ -22,8 +22,8 @@ resources:
       - .git/
       - .git
       - .gitignore
-      - License
-      - ReadMe.md
+      - */License
+      - */ReadMe.md
 
   #
   # DETERMINE THE SEMANTIC VERSION
@@ -75,9 +75,10 @@ jobs:
       # RUN UNIT TESTS
       #
 
-      - task: unit tests
+      - task: unit-tests
         file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
         input_mapping: { built: source-master }
+        output_mapping: { source: source-master }
 
       #
       # TREE UNIT TEST RESULTS
