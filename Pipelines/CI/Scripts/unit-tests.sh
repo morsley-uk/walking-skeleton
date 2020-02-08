@@ -3,8 +3,9 @@
 #set -x
 
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-ROOT="$PARENT_PATH"/../../Scripts
-source $ROOT/header.sh
+ROOT="$PARENT_PATH"/../..
+SCRIPTS="$ROOT"/Scripts
+source $SCRIPTS/header.sh
 
 cd built
 
