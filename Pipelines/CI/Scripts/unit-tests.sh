@@ -8,10 +8,10 @@ source $common/header.sh
 
 cd built
 
-mkdir TestResults
-cd TestResults
-touch test
-cd ..
+#mkdir TestResults
+#cd TestResults
+#touch test
+#cd ..
 
 cd Tests/Unit
 
@@ -30,7 +30,7 @@ for d in */; do
     dotnet test $projectFile --configuration=Release \
                              --no-build \
                              --no-restore \
-                             --results-directory=/built/TestResults \
+                             --results-directory=$parent_path/built/TestResults \
                              --logger=trx \
                              --verbosity=normal
 
