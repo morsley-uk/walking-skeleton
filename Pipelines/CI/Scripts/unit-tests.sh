@@ -33,7 +33,8 @@ cd ../../../..
 
 #ls -la
 
-cp -r built/TestResults/. test-results/
+#cp -r built/TestResults/. test-results/
+cp -r source/TestResults/. test-results/
 
 ###############################################################################
 
