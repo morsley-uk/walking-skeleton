@@ -11,7 +11,7 @@ inputs:
 - name: built
 
 outputs:
-- name: tested
+- name: test-results
   
 run:
   path: sh
