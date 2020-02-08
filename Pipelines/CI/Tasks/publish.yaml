@@ -19,5 +19,5 @@ run:
   - -exec
   - |
     ls -la
-    chmod u+x source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh
-    bash source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh
+    chmod u+x tested/Pipelines/CI/Scripts/publish.sh
+    bash tested/Pipelines/CI/Scripts/publish.sh

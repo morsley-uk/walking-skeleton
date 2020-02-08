@@ -2,9 +2,10 @@
 
 #set -x
 
-parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-common="$parent_path"/../../Scripts
-source $common/header.sh
+PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
+ROOT="$PARENT_PATH"/../../..
+SCRIPTS="$ROOT"/Pipelines/Scripts
+source $SCRIPTS/header.sh
 
 cd source
 
@@ -27,12 +28,12 @@ header 'RESTORE COMPLETED'
 
 ###############################################################################
 
-#header 'BUILD STARTED'
+header 'BUILD STARTED'
 
 dotnet build --configuration Release \
              --no-restore \
              --verbosity normal
 
-#header 'BUILD COMPLETED'
+header 'BUILD COMPLETED'
 
 ###############################################################################

@@ -87,31 +87,18 @@ jobs:
         input_mapping: { folder: source-master }
 
       #
-      # LIST CLEANED CODE
+      #  PUBLISH THE SOURCE CODE
       #
 
-      # - task: tree
-      #   file: cleaned-code/Pipelines/CI/Tasks/tree-cleaned.yaml
+      - task: publish
+        file: source-master/Pipelines/CI/Tasks/publis.yaml
+        input_mapping: { source: source-master }
+        output_mapping: { source: source-master }
 
       #
-      # RESTORE THE DEPENDENCIES
+      # TREE PUBLISHED
       #
 
-      # - task: restore
-      #   file: cleaned-code/Pipelines/CI/Tasks/restore.yaml
-
-      #
-      # LIST RESTORERD CODE
-      #
-
-      # - task: tree
-      #   file: restored-code/Pipelines/CI/Tasks/tree-restored.yaml
-
-      #
-      # BUILD THE PROJECT
-      #
-
-      # - task: build
-      #   file: restored-code/Pipelines/CI/Tasks/build.yaml
-
-#  - task: publish
+      - task: tree-published
+        file: source-master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: source-master }

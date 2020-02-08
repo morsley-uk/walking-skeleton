@@ -1,10 +1,15 @@
 #!/bin/bash
 
-parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-common="$parent_path"/../../Scripts
-source $common/header.sh
+#set -x
+
+PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
+ROOT="$PARENT_PATH"/../../..
+SCRIPTS="$ROOT"/Pipelines/Scripts
+source $SCRIPTS/header.sh
 
 cd built
+
+rmdir -r Tests
 
 ###############################################################################
 
@@ -14,9 +19,11 @@ dotnet publish --configuration Release \
                --nologo \
                --no-build \
                --no-restore \
-               --output Published \
+               --output $ROOT/Published \
                --verbosity normal
 
 header 'PUBLISH COMPLETED'
 
 ###############################################################################
+
+rmdir -r Source

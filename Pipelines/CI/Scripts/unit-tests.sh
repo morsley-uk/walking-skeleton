@@ -7,14 +7,7 @@ ROOT="$PARENT_PATH"/../../..
 SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
-cd built
-
-#mkdir TestResults
-#cd TestResults
-#touch test
-#cd ..
-
-cd Tests/Unit
+cd built/Tests/Unit
 
 ###############################################################################
 
