@@ -7,7 +7,7 @@ ROOT="$PARENT_PATH"/../../..
 SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
-cd built
+cd tested
 
 rm --recursive Tests
 
