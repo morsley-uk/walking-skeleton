@@ -6,8 +6,8 @@ set -x
 #common="$parent_path"/../../Scripts
 #source $common/header.sh
 
-#cd built
-cd source
+cd built
+#cd source
 
 mkdir TestResults
 
@@ -34,7 +34,7 @@ cd ../../../..
 #ls -la
 
 #cp -r built/TestResults/. test-results/
-cp -r source/TestResults/. test-results/
+#cp -r source/TestResults/. test-results/
 
 ###############################################################################
 
