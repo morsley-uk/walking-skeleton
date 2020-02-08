@@ -9,8 +9,6 @@ source $SCRIPTS/header.sh
 
 cd tested
 
-rm --recursive Tests
-
 ###############################################################################
 
 header 'PUBLISH STARTED'
@@ -26,6 +24,5 @@ header 'PUBLISH COMPLETED'
 
 ###############################################################################
 
+rm --recursive Tests
 rm --recursive Source
-
-ls -la
