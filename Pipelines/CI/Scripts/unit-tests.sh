@@ -6,7 +6,8 @@ set -x
 #common="$parent_path"/../../Scripts
 #source $common/header.sh
 
-cd built
+#cd built
+cd source
 
 mkdir TestResults
 
