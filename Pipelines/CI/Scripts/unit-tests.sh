@@ -9,18 +9,18 @@ set -x
 cd built
 #cd source
 
-mkdir TestResults
+#mkdir TestResults
 
-cd Tests/Unit
+#cd Tests/Unit
 
-cd Morsley.UK.Walking.Skeleton.API.UnitTests
+#cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
-dotnet test --configuration=Release \
-            --results-directory=built/TestResults \
-            --logger=trx \
-            --no-build \
-            --no-restore \
-            --verbosity=diagnostic
+#dotnet test --configuration=Release \
+#            --results-directory=built/TestResults \
+#            --logger=trx \
+#            --no-build \
+#            --no-restore \
+#            --verbosity=diagnostic
 
 #dotnet test --verbosity=detailed \
 #            --no-build \
@@ -29,7 +29,7 @@ dotnet test --configuration=Release \
 #            --logger=trx \
 #            --configuration=Release
 
-cd ../../../..
+#cd ../../../..
 
 #ls -la
 
@@ -40,15 +40,15 @@ cd ../../../..
 
 # header 'TESTS STARTED'
 
-# for d in */; do
+for d in */; do
 
-#     #echo "$d"
-#     #cd "$d"
+  echo "$d"
+#  cd "$d"
 
 #     #ls -la
 
-#     projectFile=$(find . -type f -name "*.csproj")
-#     echo $projectFile
+     projectFile=$(find . -type f -name "*.csproj")
+     echo $projectFile
 #     #cd "$projectFile"
 
 #     #echo "-------------------------------------------------------------------------------"
@@ -71,7 +71,7 @@ cd ../../../..
 #     #printf "\n"
 #     #printf "\n"
 
-# done
+done
 
 # header 'TESTS COMPLETED'
 
