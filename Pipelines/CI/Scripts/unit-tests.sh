@@ -8,7 +8,10 @@ cd built/Tests/Unit
 
 cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
-dotnet test --configuration=Release
+dotnet test --configuration=Release \
+            --results-directory=built/TestResults \
+            --logger=trx \
+            --verbosity=normal
 
 #dotnet test --verbosity=detailed \
 #            --no-build \
@@ -17,11 +20,11 @@ dotnet test --configuration=Release
 #            --logger=trx \
 #            --configuration=Release
 
-#cd ../../../..
+cd ../../../..
 
 #ls -la
 
-#cp -r built/. tested/
+cp -r built/TestResults/. test-results/
 
 ###############################################################################
 
