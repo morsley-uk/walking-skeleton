@@ -47,7 +47,7 @@ jobs:
         trigger: true
 
       #
-      # LIST SOURCE CODE - MASTER
+      # TREE SOURCE CODE - MASTER
       #
 
       - task: tree-source
@@ -61,15 +61,15 @@ jobs:
       - task: build
         file: source-master/Pipelines/CI/Tasks/build.yaml
         input_mapping: { source: source-master }
-        output_mapping: { built: source-master }
+        output_mapping: { source: source-master }
 
       #
-      # LIST BUILT
+      # TREE BUILT
       #
 
-      # - task: tree-built
-      #   file: source-master/Pipelines/CI/Tasks/tree.yaml
-      #   input_mapping: { folder: source-master }
+      - task: tree-built
+        file: source-master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: source-master }
 
       #
       # RUN UNIT TESTs

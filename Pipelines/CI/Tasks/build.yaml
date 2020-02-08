@@ -11,7 +11,7 @@ inputs:
 - name: source
 
 outputs:
-- name: built
+- name: source
 
 run:
   path: sh
@@ -20,5 +20,5 @@ run:
   - |
     chmod u+x source/Pipelines/CI/Scripts/build.sh
     bash source/Pipelines/CI/Scripts/build.sh
-    chmod u+x source/Pipelines/CI/Scripts/unit-tests.sh
-    bash source/Pipelines/CI/Scripts/unit-tests.sh
+#    chmod u+x source/Pipelines/CI/Scripts/unit-tests.sh
+#    bash source/Pipelines/CI/Scripts/unit-tests.sh
