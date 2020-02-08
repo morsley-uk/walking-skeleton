@@ -8,7 +8,7 @@ cd built/Tests/Unit
 
 cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
-dotnet test --configursation=Release
+dotnet test --configuration=Release
 
 #dotnet test --verbosity=detailed \
 #            --no-build \
