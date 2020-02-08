@@ -22,8 +22,6 @@ resources:
       - .git/
       - .git
       - .gitignore
-      - */License
-      - */ReadMe.md
 
   #
   # DETERMINE THE SEMANTIC VERSION

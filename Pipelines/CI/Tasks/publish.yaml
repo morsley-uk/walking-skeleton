@@ -8,10 +8,10 @@ image_resource:
     tag: 3.1-bionic
 
 inputs:
-- name: source-master
+- name: tested
 
 outputs:
-- name: published
+- name: tested
 
 run:
   path: sh
@@ -20,5 +20,4 @@ run:
   - |
     ls -la
     chmod u+x source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh
-    bash source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh 
-#    cp -a source-master/Published/. published/•
+    bash source-master/Pipelines/CI/Scripts/clean-restore-build-publish.sh
