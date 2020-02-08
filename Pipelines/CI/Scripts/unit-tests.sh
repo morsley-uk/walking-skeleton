@@ -9,9 +9,9 @@ set -x
 cd built
 #cd source
 
-#mkdir TestResults
+mkdir TestResults
 
-#cd Tests/Unit
+cd Tests/Unit
 
 #cd Morsley.UK.Walking.Skeleton.API.UnitTests
 
@@ -42,17 +42,18 @@ cd built
 
 for d in */; do
 
-   echo "$d"
-#  cd "$d"
+#   echo "$d"
+    cd "$d"
 
 #     #ls -la
 
     projectFile=$(find . -type f -name "*.csproj")
-    echo $projectFile
+#    echo $projectFile
 #     #cd "$projectFile"
 
 #     #echo "-------------------------------------------------------------------------------"
 #     #printf "\n"
+
     echo "---------- TESTS INITIATED ----------"
 
 #     #dotnet test --help
@@ -65,11 +66,14 @@ for d in */; do
                              --configuration=Release
 
     echo "---------- TESTS FINISHED ----------"
+
 #     #printf "\n"
 #     #echo "-------------------------------------------------------------------------------"
 #     #printf "\n"
 #     #printf "\n"
 #     #printf "\n"
+
+    cd ..
 
 done
 
