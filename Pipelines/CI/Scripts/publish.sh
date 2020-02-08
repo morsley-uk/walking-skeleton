@@ -9,7 +9,9 @@ source $SCRIPTS/header.sh
 
 cd built
 
-rmdir -r Tests
+rm --recursive Tests
+
+cd Source
 
 ###############################################################################
 
@@ -26,4 +28,4 @@ header 'PUBLISH COMPLETED'
 
 ###############################################################################
 
-rmdir -r Source
+rm --recursive Source
