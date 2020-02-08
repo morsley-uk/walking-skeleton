@@ -19,8 +19,7 @@ dotnet test --configuration=Release \
             --logger=trx \
             --no-build \
             --no-restore 
-#\
-#            --verbosity=normal
+            --verbosity=diagnostic
 
 #dotnet test --verbosity=detailed \
 #            --no-build \
