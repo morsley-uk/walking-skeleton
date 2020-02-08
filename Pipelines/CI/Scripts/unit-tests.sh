@@ -42,29 +42,29 @@ cd built
 
 for d in */; do
 
-  echo "$d"
+   echo "$d"
 #  cd "$d"
 
 #     #ls -la
 
-     projectFile=$(find . -type f -name "*.csproj")
-     echo $projectFile
+    projectFile=$(find . -type f -name "*.csproj")
+    echo $projectFile
 #     #cd "$projectFile"
 
 #     #echo "-------------------------------------------------------------------------------"
 #     #printf "\n"
-#     #echo "---------- TESTS INITIATED ----------"
+    echo "---------- TESTS INITIATED ----------"
 
 #     #dotnet test --help
 
-#     dotnet test $projectFile --verbosity=normal \
-#                              --no-build \
-#                              --no-restore \
-#                              --results-directory=built/TestResults \
-#                              --logger=trx \
-#                              --configuration=Release
+    dotnet test $projectFile --verbosity=normal \
+                             --no-build \
+                             --no-restore \
+                             --results-directory=built/TestResults \
+                             --logger=trx \
+                             --configuration=Release
 
-#     #echo "---------- TESTS FINISHED ----------"
+    echo "---------- TESTS FINISHED ----------"
 #     #printf "\n"
 #     #echo "-------------------------------------------------------------------------------"
 #     #printf "\n"
@@ -73,6 +73,6 @@ for d in */; do
 
 done
 
-# header 'TESTS COMPLETED'
+#header 'TESTS COMPLETED'
 
 ###############################################################################
