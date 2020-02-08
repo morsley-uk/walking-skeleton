@@ -10,7 +10,12 @@ cd built
 
 header 'PUBLISH STARTED'
 
-dotnet publish --verbosity normal --configuration Release --no-build --no-restore --output Published --nologo
+dotnet publish --configuration Release \
+               --nologo \
+               --no-build \
+               --no-restore \
+               --output Published \
+               --verbosity normal
 
 header 'PUBLISH COMPLETED'
 

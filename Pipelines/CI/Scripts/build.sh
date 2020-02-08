@@ -1,43 +1,38 @@
 #!/bin/bash
 
-set -x
+#set -x
 
-#parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-#common="$parent_path"/../../Scripts
-#source $common/header.sh
+parent_path=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
+common="$parent_path"/../../Scripts
+source $common/header.sh
 
 cd source
 
 ###############################################################################
 
-#header 'CLEAN STARTED'
+header 'CLEAN STARTED'
 
-dotnet clean --verbosity normal --nologo
+dotnet clean --nologo \
+             --verbosity normal
 
-#header 'CLEAN COMPLETED'
+header 'CLEAN COMPLETED'
 
 ###############################################################################
 
-#header 'RESTORE STARTED'
+header 'RESTORE STARTED'
 
 dotnet restore --verbosity normal
 
-#header 'RESTORE COMPLETED'
+header 'RESTORE COMPLETED'
 
 ###############################################################################
 
 #header 'BUILD STARTED'
 
-dotnet build --verbosity normal --configuration Release --no-restore
+dotnet build --configuration Release \
+             --no-restore \
+             --verbosity normal
 
 #header 'BUILD COMPLETED'
 
 ###############################################################################
-
-#cd ..
-
-#ls -la
-
-#cp -r source/. built/
-
-#rsync -a source/ built/
