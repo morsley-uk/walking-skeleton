@@ -9,6 +9,9 @@ source $common/header.sh
 cd built
 
 mkdir TestResults
+cd TestResults
+touch test
+cd ..
 
 cd Tests/Unit
 
@@ -31,7 +34,7 @@ for d in */; do
                              --logger=trx \
                              --verbosity=normal
 
-    echo 'TESTS FINISHED'
+    sub-header 'TESTS FINISHED'
 
     cd ..
 
