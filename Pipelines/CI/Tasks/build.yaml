@@ -8,15 +8,15 @@ image_resource:
     tag: 3.1-bionic
 
 inputs:
-- name: source
+- name: code
 
 outputs:
-- name: source
+- name: code
 
 run:
   path: sh
   args:
   - -exec
   - |
-    chmod u+x source/Pipelines/CI/Scripts/build.sh
-    bash source/Pipelines/CI/Scripts/build.sh
+    chmod u+x code/Pipelines/CI/Scripts/build.sh
+    bash code/Pipelines/CI/Scripts/build.sh

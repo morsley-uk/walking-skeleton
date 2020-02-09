@@ -6,10 +6,10 @@
 resources:
 
   #
-  # GET THE SOURCE CODE
+  # GET THE CODE
   #
 
-  - name: source-master
+  - name: master
     type: git
     icon: github-circle
     # check_every: 5 # Minutes
@@ -41,7 +41,7 @@ jobs:
 
     plan:
 
-      - get: source-master
+      - get: master
         trigger: true
 
       #
@@ -49,56 +49,56 @@ jobs:
       #
 
       - task: tree-source
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: source-master }
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
 
       #
       #  BUILD THE SOURCE CODE
       #
 
       - task: build
-        file: source-master/Pipelines/CI/Tasks/build.yaml
-        input_mapping: { source: source-master }
-        output_mapping: { source: source-master }
+        file: master/Pipelines/CI/Tasks/build.yaml
+        input_mapping: { code: master }
+        output_mapping: { code: master }
 
       #
       # TREE BUILT
       #
 
       - task: tree-built
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: source-master }
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
 
       #
       # RUN UNIT TESTS
       #
 
       - task: unit-tests
-        file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
-        input_mapping: { built: source-master }
-        output_mapping: { built: source-master }
+        file: master/Pipelines/CI/Tasks/unit-tests.yaml
+        input_mapping: { built: master }
+        output_mapping: { built: master }
 
       #
       # TREE UNIT TEST RESULTS
       #
 
       - task: tree-unit-test-results
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: source-master }
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
 
       #
       #  PUBLISH THE SOURCE CODE
       #
 
-      - task: publish
-        file: source-master/Pipelines/CI/Tasks/publish.yaml
-        input_mapping: { tested: source-master }
-        output_mapping: { tested: source-master }
+#      - task: publish
+#        file: master/Pipelines/CI/Tasks/publish.yaml
+#        input_mapping: { tested: master }
+#        output_mapping: { tested: master }
 
       #
       # TREE PUBLISHED
       #
 
-      - task: tree-published
-        file: source-master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: source-master }
+#      - task: tree-published
+#        file: master/Pipelines/CI/Tasks/tree.yaml
+#        input_mapping: { folder: master }

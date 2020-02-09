@@ -7,7 +7,7 @@ ROOT="$PARENT_PATH"/../../..
 SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
-cd source
+cd code
 
 ###############################################################################
 
@@ -38,9 +38,15 @@ header 'BUILD COMPLETED'
 
 ###############################################################################
 
-# dotnet publish --configuration Release \
-#                --nologo \
-#                --no-build \
-#                --no-restore \
-#                --output $ROOT/Published \
-#                --verbosity normal
+header 'PUBLISH STARTED'
+
+cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+
+dotnet publish --configuration Release \
+               --nologo \
+               --no-build \
+               --no-restore \
+               --output $ROOT/Published \
+               --verbosity normal
+
+header 'PUBLISH COMPLETED'
