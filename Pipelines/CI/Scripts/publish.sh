@@ -7,7 +7,7 @@ ROOT="$PARENT_PATH"/../../..
 SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
-cd tested
+cd tested/Source/Presentation/Morsley.UK.Walking.Skeleton.API
 
 ###############################################################################
 
@@ -23,6 +23,8 @@ dotnet publish --configuration Release \
 header 'PUBLISH COMPLETED'
 
 ###############################################################################
+
+cd ../../../..
 
 rm --recursive Tests
 rm --recursive Source
