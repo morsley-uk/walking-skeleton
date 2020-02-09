@@ -18,5 +18,5 @@ run:
   args:
   - -exec
   - |
-    chmod u+x completed/Pipelines/CI/Scripts/docker.sh
-    bash completed/Pipelines/CI/Scripts/docker.sh
+    chmod u+x completed/Pipelines/CI/Scripts/containerise.sh
+    bash completed/Pipelines/CI/Scripts/containerise.sh

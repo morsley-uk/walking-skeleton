@@ -87,18 +87,18 @@ jobs:
         input_mapping: { folder: master }
 
       #
-      #  PUBLISH THE SOURCE CODE
+      #  CONTAINERISE
       #
 
-#      - task: publish
-#        file: master/Pipelines/CI/Tasks/publish.yaml
-#        input_mapping: { tested: master }
-#        output_mapping: { tested: master }
+      - task: containerise
+        file: master/Pipelines/CI/Tasks/containerise.yaml
+        input_mapping: { completed: master }
+        output_mapping: { completed: master }
 
       #
-      # TREE PUBLISHED
+      # TREE CONTAINERISE
       #
 
-#      - task: tree-published
-#        file: master/Pipelines/CI/Tasks/tree.yaml
-#        input_mapping: { folder: master }
+      - task: tree-containerise
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }

@@ -4,7 +4,7 @@ set -x
 
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 ROOT="$PARENT_PATH"/../../..
-DOCKERFILE="$ROOT"/Pipelines/CI
+CI="$ROOT"/Pipelines/CI
 source $SCRIPTS/header.sh
 
 cd tested
@@ -13,7 +13,7 @@ cd tested
 
 header 'CREATE DOCKER IMAGE'
 
-cd $DOCKERFILE
+cd CI
 
 docker --tag morsley-uk-walking-skeleton-api .
 
