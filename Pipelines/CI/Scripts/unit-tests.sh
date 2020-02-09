@@ -17,13 +17,6 @@ for d in */; do
 
     cd "$d"
 
-    # dotnet test $projectFile --configuration=Release \
-    #                          --no-build \
-    #                          --no-restore \
-    #                          --results-directory=$ROOT/TestResults/Unit \
-    #                          --logger=trx \
-    #                          --verbosity=diagnostic
-
     test_project=$(find . -type f -name "*.csproj")
 
     if [[ $test_project ]]; then
