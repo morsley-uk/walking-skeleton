@@ -24,7 +24,7 @@ for d in */; do
     #                          --logger=trx \
     #                          --verbosity=diagnostic
 
-    test-project=$(find . -type f -name "*.csproj")
+    test_project=$(find . -type f -name "*.csproj")
 
     if [[ $test_project ]]; then
     
