@@ -26,7 +26,7 @@ for d in */; do
                              --no-restore \
                              --results-directory=$ROOT/TestResults/Unit \
                              --logger=trx \
-                             --verbosity=normal
+                             --verbosity=diagnostic
 
     sub-header 'TESTS FINISHED'
 
