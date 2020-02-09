@@ -16,7 +16,7 @@ header 'PUBLISH STARTED'
 dotnet publish --configuration Release \
                --nologo \
                --no-build \
-               --no-restore \
+#               --no-restore \
                --output $ROOT/Published \
                --verbosity normal
 
