@@ -38,15 +38,19 @@ header 'BUILD COMPLETED'
 
 ###############################################################################
 
-# header 'PUBLISH STARTED'
+header 'PUBLISH STARTED'
 
-# cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
 
-# dotnet publish --configuration Release \
-#                --nologo \
-#                --no-build \
-#                --no-restore \
-#                --output $ROOT/Published \
-#                --verbosity normal
+dotnet publish --configuration Release \
+               --nologo \
+               --no-build \
+               --no-restore \
+               --output $ROOT/Published \
+               --verbosity normal
 
-# header 'PUBLISH COMPLETED'
+header 'PUBLISH COMPLETED'
+
+cd ../../..
+
+rm --recursive Source

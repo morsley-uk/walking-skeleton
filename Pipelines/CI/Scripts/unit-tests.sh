@@ -17,10 +17,6 @@ for d in */; do
 
     cd "$d"
 
-    projectFile=$(find . -type f -name "*.csproj")
-
-    sub-header 'TESTS INITIATED'
-
     # dotnet test $projectFile --configuration=Release \
     #                          --no-build \
     #                          --no-restore \
@@ -28,9 +24,26 @@ for d in */; do
     #                          --logger=trx \
     #                          --verbosity=diagnostic
 
-    dotnet vstest --help
+    test-project=$(find . -type f -name "*.csproj")
 
-    sub-header 'TESTS FINISHED'
+    if [[ $test_project ]]; then
+    
+        sub-header 'TESTS INITIATED'
+
+        filename=$(basename $test_project)    
+        filename=${filename%.*}.dll
+        echo $filename
+        
+        test_dll=$(find *bin/Release* -type f -name $filename)
+        echo $test_dll
+    
+        dotnet vstest $test_dll --logger:trx \
+                                --ResultsDirectory:$PARENT_PATH/UnitTestsResults
+
+        sub-header 'TESTS FINISHED'
+
+    fi
+    
 
     cd ..
 
@@ -39,3 +52,5 @@ done
 header 'UNIT TESTS COMPLETED'
 
 ###############################################################################
+
+# ToDo --> Remove Unit Tests folder.
