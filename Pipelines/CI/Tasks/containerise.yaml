@@ -4,8 +4,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: ubuntu
-    tag: 18.04
+    repository: johnmorsley/ubuntu-with-docker
+#    tag: 18.04
 
 inputs:
 - name: tested
@@ -18,11 +18,5 @@ run:
   args:
   - -exec
   - |
-    apt update
-    apt install apt-transport-https ca-certificates curl software-properties-common -y
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-    apt update
-    apt install docker-ce -y
     chmod u+x tested/Pipelines/CI/Scripts/containerise.sh
     bash tested/Pipelines/CI/Scripts/containerise.sh
