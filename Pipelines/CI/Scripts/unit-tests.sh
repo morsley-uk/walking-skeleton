@@ -21,12 +21,14 @@ for d in */; do
 
     sub-header 'TESTS INITIATED'
 
-    dotnet test $projectFile --configuration=Release \
-                             --no-build \
-                             --no-restore \
-                             --results-directory=$ROOT/TestResults/Unit \
-                             --logger=trx \
-                             --verbosity=diagnostic
+    # dotnet test $projectFile --configuration=Release \
+    #                          --no-build \
+    #                          --no-restore \
+    #                          --results-directory=$ROOT/TestResults/Unit \
+    #                          --logger=trx \
+    #                          --verbosity=diagnostic
+
+    dotnet vstest --help
 
     sub-header 'TESTS FINISHED'
 
