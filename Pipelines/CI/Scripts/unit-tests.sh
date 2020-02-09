@@ -31,20 +31,16 @@ for d in */; do
         sub-header 'TESTS INITIATED'
 
         filename=$(basename $test_project)    
-        filename=${filename%.*}.dll
-        echo $filename
-        
+        filename=${filename%.*}.dll        
         test_dll=$(find *bin/Release* -type f -name $filename)
-        echo $test_dll
     
         dotnet vstest $test_dll --logger:trx \
-                                --ResultsDirectory:$PARENT_PATH/UnitTestsResults
+                                --ResultsDirectory:$ROOT/TestsResults/Unit
 
         sub-header 'TESTS FINISHED'
 
     fi
     
-
     cd ..
 
 done
