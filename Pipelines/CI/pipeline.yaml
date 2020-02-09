@@ -73,10 +73,10 @@ jobs:
       # RUN UNIT TESTS
       #
 
-      # - task: unit-tests
-      #   file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
-      #   input_mapping: { built: source-master }
-      #   output_mapping: { built: source-master }
+      - task: unit-tests
+        file: source-master/Pipelines/CI/Tasks/unit-tests.yaml
+        input_mapping: { built: source-master }
+        output_mapping: { built: source-master }
 
       #
       # TREE UNIT TEST RESULTS
