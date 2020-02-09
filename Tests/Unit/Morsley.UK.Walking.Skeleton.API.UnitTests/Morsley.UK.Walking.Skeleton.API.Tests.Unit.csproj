@@ -21,7 +21,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <FluentValidationExcludedCultures Include="be;cs;cs-CZ;da;de;es;fa;fi;fr;ja;it;ko;mk;nl;pl;pt;pt-BR;ru;sv;tr;uk;zh-CN;zh-CHS;zh-CHT;zh-Hans;zh-Hant;">
+      <InProject>false</InProject>
+    </FluentValidationExcludedCultures>
+  </ItemGroup>
+    
+    <ItemGroup>
     <ProjectReference Include="..\..\..\Source\Presentation\Morsley.UK.Walking.Skeleton.API\Morsley.UK.Walking.Skeleton.API.csproj" />
   </ItemGroup>
+
+  <Target Name="RemoveTranslationsAfterBuild" AfterTargets="AfterBuild">
+    <RemoveDir Directories="@(FluentValidationExcludedCultures->'$(OutputPath)%(Filename)')" />
+  </Target>
 
 </Project>
