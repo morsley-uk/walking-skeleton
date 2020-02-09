@@ -8,13 +8,15 @@ CI="$ROOT"/Pipelines/CI
 SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
+ls -la
+
 cd tested
 
 ###############################################################################
 
 header 'CREATE DOCKER IMAGE'
 
-cd CI
+cd $CI
 
 ls -la
 
