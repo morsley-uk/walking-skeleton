@@ -49,4 +49,6 @@ header 'UNIT TESTS COMPLETED'
 
 ###############################################################################
 
-# ToDo --> Remove Unit Tests folder.
+cd ..
+
+rm --recursive Unit
