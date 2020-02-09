@@ -16,7 +16,9 @@ header 'CREATE DOCKER IMAGE'
 
 cd CI
 
-docker --tag morsley-uk-walking-skeleton-api .
+ls -la
+
+#docker --tag morsley-uk-walking-skeleton-api .
 
 header 'CREATE DOCKER IMAGE'
 

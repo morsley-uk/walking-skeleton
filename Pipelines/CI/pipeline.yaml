@@ -92,8 +92,8 @@ jobs:
 
       - task: containerise
         file: master/Pipelines/CI/Tasks/containerise.yaml
-        input_mapping: { completed: master }
-        output_mapping: { completed: master }
+        input_mapping: { tested: master }
+        output_mapping: { tested: master }
 
       #
       # TREE CONTAINERISE

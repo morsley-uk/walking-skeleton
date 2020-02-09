@@ -8,15 +8,15 @@ image_resource:
     tag: 18.04
 
 inputs:
-- name: completed
+- name: tested
 
 outputs:
-- name: completed
+- name: tested
 
 run:
   path: sh
   args:
   - -exec
   - |
-    chmod u+x completed/Pipelines/CI/Scripts/containerise.sh
-    bash completed/Pipelines/CI/Scripts/containerise.sh
+    chmod u+x tested/Pipelines/CI/Scripts/containerise.sh
+    bash tested/Pipelines/CI/Scripts/containerise.sh
