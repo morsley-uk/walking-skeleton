@@ -13,12 +13,12 @@ cd tested/Source/Presentation/Morsley.UK.Walking.Skeleton.API
 
 header 'PUBLISH STARTED'
 
-dotnet publish --configuration Release \
-               --nologo \
-               --no-build \
+#dotnet publish --configuration Release \
+#               --nologo \
+#               --no-build \
 #               --no-restore \
-               --output $ROOT/Published \
-               --verbosity normal
+#               --output $ROOT/Published \
+#               --verbosity normal
 
 header 'PUBLISH COMPLETED'
 

@@ -37,3 +37,10 @@ dotnet build --configuration Release \
 header 'BUILD COMPLETED'
 
 ###############################################################################
+
+dotnet publish --configuration Release \
+               --nologo \
+               --no-build \
+               --no-restore \
+               --output $ROOT/Published \
+               --verbosity normal
