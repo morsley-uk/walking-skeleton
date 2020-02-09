@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: ubuntu
+    tag: 18.04
+
+inputs:
+- name: completed
+
+outputs:
+- name: completed
+
+run:
+  path: sh
+  args:
+  - -exec
+  - |
+    chmod u+x completed/Pipelines/CI/Scripts/docker.sh
+    bash completed/Pipelines/CI/Scripts/docker.sh

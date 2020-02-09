@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4B26DDC4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{01963D43-9154-4C3F-B297-672B89C71488}"
 	ProjectSection(SolutionItems) = preProject
+		Source\Presentation\Morsley.UK.Walking.Skeleton.API\Dockerfile = Source\Presentation\Morsley.UK.Walking.Skeleton.API\Dockerfile
 		Pipelines\CI\pipeline.yaml = Pipelines\CI\pipeline.yaml
 		Pipelines\CI\ReadMe.md = Pipelines\CI\ReadMe.md
 	EndProjectSection
