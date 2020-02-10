@@ -19,4 +19,4 @@ run:
   - -exec
   - |
     chmod u+x tested/Pipelines/CI/Scripts/containerise.sh
-    bash tested/Pipelines/CI/Scripts/containerise.sh
+    sh tested/Pipelines/CI/Scripts/containerise.sh
