@@ -6,12 +6,12 @@
 resources:
 
   #
-  # GET THE CODE
+  # GITHUB
   #
 
   - name: master
     type: git
-    icon: github-circle
+    icon: github
     # check_every: 5 # Minutes
     source:
       uri: https://github.com/morsley-uk/walking-skeleton
@@ -22,6 +22,18 @@ resources:
       - .git/
       - .git
       - .gitignore
+
+  #
+  # DOCKER
+  # 
+
+  - name: docker
+    type: docker-image
+    icon: docker
+    source: 
+      repository: concourse/git-resource
+      username: ((docker-username))
+      password: ((docker-password))
 
   #
   # DETERMINE THE SEMANTIC VERSION
@@ -90,15 +102,19 @@ jobs:
       #  CONTAINERISE
       #
 
-      - task: containerise
-        file: master/Pipelines/CI/Tasks/containerise.yaml
-        input_mapping: { tested: master }
-        output_mapping: { tested: master }
+      - put: docker
+        params:
+          build:
+
+      #- task: containerise
+      #  file: master/Pipelines/CI/Tasks/containerise.yaml
+      #  input_mapping: { tested: master }
+      #  output_mapping: { tested: master }
 
       #
       # TREE CONTAINERISE
       #
 
-      - task: tree-containerise
-        file: master/Pipelines/CI/Tasks/tree.yaml
-        input_mapping: { folder: master }
+      #- task: tree-containerise
+      #  file: master/Pipelines/CI/Tasks/tree.yaml
+      #  input_mapping: { folder: master }
