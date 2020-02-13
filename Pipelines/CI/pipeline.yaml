@@ -31,7 +31,7 @@ resources:
     type: docker-image
     icon: docker
     source: 
-      repository: concourse/git-resource
+      repository: concourse/docker-image-resource
       username: ((docker-username))
       password: ((docker-password))
 
@@ -103,8 +103,8 @@ jobs:
       #
 
       - put: docker
-        params:
-          build:
+#        params:
+#          build: 
 
       #- task: containerise
       #  file: master/Pipelines/CI/Tasks/containerise.yaml
