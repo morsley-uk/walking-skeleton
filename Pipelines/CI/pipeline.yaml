@@ -11,7 +11,7 @@ resources:
 
   - name: master
     type: git
-    icon: github
+    icon: github-circle
     # check_every: 5 # Minutes
     source:
       uri: https://github.com/morsley-uk/walking-skeleton
@@ -31,7 +31,7 @@ resources:
     type: docker-image
     icon: docker
     source: 
-      repository: concourse/docker-image-resource
+      repository: johnmorsley/walking-skeleton-api
       username: ((docker-username))
       password: ((docker-password))
 
@@ -103,8 +103,9 @@ jobs:
       #
 
       - put: docker
-#        params:
-#          build: 
+        params:
+          build: .
+          dockerfile: master/Pipelines/CI/Dockerfile 
 
       #- task: containerise
       #  file: master/Pipelines/CI/Tasks/containerise.yaml
