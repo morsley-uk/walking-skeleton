@@ -1,12 +1,10 @@
 ﻿FROM mcr.microsoft.com/dotnet/core/runtime:3.1
 
-#WORKDIR /app
+WORKDIR /app
 
-RUN ls -la
+COPY master/Published/ .
 
-#COPY ../../Published .
+EXPOSE 5001/tcp
+ENV ASPNETCORE_URLS http://*:5001
 
-#EXPOSE 5001/tcp
-#ENV ASPNETCORE_URLS http://*:5001
-
-#ENTRYPOINT ["dotnet", "Morsley.UK.Walking.Skeleton.API.dll", "--no-launch-prifile"]
+ENTRYPOINT ["dotnet", "Morsley.UK.Walking.Skeleton.API.dll", "--no-launch-profile"]
