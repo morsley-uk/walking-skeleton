@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Morsley.UK.Walking.Skeleton.API.Controllers.v1;
 using Xunit;
 
-namespace Morsley.UK.YearPlanner.Users.API.Tests.Unit
+namespace Morsley.UK.WalkingSkeleton.API.Tests.Unit
 {
     public class UsersControllerUnitTests
     {

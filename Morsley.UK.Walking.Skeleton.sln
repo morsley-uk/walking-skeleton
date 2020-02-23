@@ -19,7 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4B26DDC4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{01963D43-9154-4C3F-B297-672B89C71488}"
 	ProjectSection(SolutionItems) = preProject
-		Source\Presentation\Morsley.UK.Walking.Skeleton.API\Dockerfile = Source\Presentation\Morsley.UK.Walking.Skeleton.API\Dockerfile
+		Pipelines\CI\credentials.yaml = Pipelines\CI\credentials.yaml
+		Pipelines\CI\Dockerfile = Pipelines\CI\Dockerfile
 		Pipelines\CI\pipeline.yaml = Pipelines\CI\pipeline.yaml
 		Pipelines\CI\ReadMe.md = Pipelines\CI\ReadMe.md
 	EndProjectSection
@@ -48,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.Walking.Skeleton.API", "Source\Presentation\Morsley.UK.Walking.Skeleton.API\Morsley.UK.Walking.Skeleton.API.csproj", "{02105B62-6A77-473D-B429-19DEAEEB2C2B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.Walking.Skeleton.API.Tests.Unit", "Tests\Unit\Morsley.UK.Walking.Skeleton.API.UnitTests\Morsley.UK.Walking.Skeleton.API.Tests.Unit.csproj", "{C5A1F29F-10EB-4384-9889-59D985267315}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.WalkingSkeleton.API.Tests.Unit", "Tests\Unit\Morsley.UK.Walking.Skeleton.API.UnitTests\Morsley.UK.WalkingSkeleton.API.Tests.Unit.csproj", "{C5A1F29F-10EB-4384-9889-59D985267315}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{90FDD811-F6A6-4AAD-8331-FA86ABF39071}"
 	ProjectSection(SolutionItems) = preProject
@@ -58,6 +59,23 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Concourse", "Concourse", "{ED400882-F14F-4592-A6FE-CFF5388FE672}"
 	ProjectSection(SolutionItems) = preProject
 		Pipelines\Concourse\docker-compose.yaml = Pipelines\Concourse\docker-compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{D0A506ED-17CE-4361-9104-C8C390F21C50}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\CI\Scripts\build.sh = Pipelines\CI\Scripts\build.sh
+		Pipelines\CI\Scripts\containerise.sh = Pipelines\CI\Scripts\containerise.sh
+		Pipelines\CI\Scripts\publish.sh = Pipelines\CI\Scripts\publish.sh
+		Pipelines\CI\Scripts\unit-tests.sh = Pipelines\CI\Scripts\unit-tests.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{49F6E426-00EA-4D68-B75B-D66F44BFF4FC}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\CI\Tasks\build.yaml = Pipelines\CI\Tasks\build.yaml
+		Pipelines\CI\Tasks\containerise.yaml = Pipelines\CI\Tasks\containerise.yaml
+		Pipelines\CI\Tasks\publish.yaml = Pipelines\CI\Tasks\publish.yaml
+		Pipelines\CI\Tasks\tree.yaml = Pipelines\CI\Tasks\tree.yaml
+		Pipelines\CI\Tasks\unit-tests.yaml = Pipelines\CI\Tasks\unit-tests.yaml
 	EndProjectSection
 EndProject
 Global
@@ -93,6 +111,8 @@ Global
 		{C5A1F29F-10EB-4384-9889-59D985267315} = {77B088F8-90F6-45FD-844C-046A74D9B47C}
 		{90FDD811-F6A6-4AAD-8331-FA86ABF39071} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
 		{ED400882-F14F-4592-A6FE-CFF5388FE672} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
+		{D0A506ED-17CE-4361-9104-C8C390F21C50} = {01963D43-9154-4C3F-B297-672B89C71488}
+		{49F6E426-00EA-4D68-B75B-D66F44BFF4FC} = {01963D43-9154-4C3F-B297-672B89C71488}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EAB81E26-DEA4-46CC-82A6-E96750B86FB6}
