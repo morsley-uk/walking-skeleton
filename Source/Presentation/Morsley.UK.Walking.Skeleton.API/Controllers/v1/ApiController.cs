@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Morsley.UK.Walking.Skeleton.API.Controllers.v1
@@ -24,7 +25,7 @@ namespace Morsley.UK.Walking.Skeleton.API.Controllers.v1
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Get()
         {
-            return Ok("Hello!");
+            return Ok($"Hello, from {Environment.MachineName}!");
         }
 
         #endregion GET
