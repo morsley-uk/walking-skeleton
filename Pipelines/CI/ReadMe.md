@@ -1,5 +1,5 @@
 ```
-fly --target aws login --username test --password test --concourse-url http://ec2-35-178-231-149.eu-west-2.compute.amazonaws.com:8080
+fly --target aws login --username test --password test --concourse-url http://concourse.morsley.io:8080
 ```
 
 ```
