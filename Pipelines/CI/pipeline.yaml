@@ -47,8 +47,10 @@ resources:
 
   - name: kubeconfig
     type: s3
+    icon: aws
     source:
-      bucket: concourse-jasonmorsley-io
+      bucket: morsley-io-test #concourse-jasonmorsley-io
+      filename: test.txt
       access_key_id: ((aws-access-key))
       secret_access_key_id: ((secret-aws-access-key))
 
