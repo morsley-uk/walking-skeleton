@@ -18,5 +18,5 @@ run:
   args:
   - -exec
   - |
-    chmod u+x code/Pipelines/CI/Scripts/build.sh
-    bash code/Pipelines/CI/Scripts/build.sh
+    chmod u+x code/Pipelines/Scripts/build.sh
+    bash code/Pipelines/Scripts/build.sh
