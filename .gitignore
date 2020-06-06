@@ -356,4 +356,4 @@ Published
 .idea
 
 # We need Vault!
-#credentials.yaml
+credentials.yaml

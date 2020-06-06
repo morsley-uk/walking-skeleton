@@ -9,7 +9,7 @@ resources:
   # GITHUB
   #
 
-  - name: master
+  - name: master    
     type: git
     icon: github-circle
     # check_every: 5 # Minutes
@@ -42,14 +42,20 @@ resources:
   #- name: semantic-version
 
   #
-  # GET THE KUBERNETES CLUSTER 
+  # GET THE KUBERNETES CLUSTER KUBECONFIG
   #
 
-  #- name: kubernetes-cluster
+  - name: kubeconfig
+    type: s3
+    source:
+      bucket: concourse-jasonmorsley-io
+      access_key_id: ((aws-access-key))
+      secret_access_key_id: ((secret-aws-access-key))
 
 jobs:
 
   - name: ci
+    serial: true
 
     plan:
 
@@ -119,3 +125,18 @@ jobs:
       #- task: tree-containerise
       #  file: master/Pipelines/CI/Tasks/tree.yaml
       #  input_mapping: { folder: master }
+        
+  - name: cd
+    serial: true
+      
+    plan:
+
+      - get: master
+        trigger: true
+        passed: [ci]
+        
+      - get: kubeconfig
+        
+      - task: tree-source 
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
