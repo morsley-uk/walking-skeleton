@@ -31,7 +31,7 @@ resources:
     type: docker-image
     icon: docker
     source: 
-      repository: johnmorsley/walking-skeleton-api
+      repository: jasonmorsleyio/walking-skeleton-api
       username: ((docker-username))
       password: ((docker-password))
 

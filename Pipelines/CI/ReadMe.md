@@ -34,9 +34,5 @@ fly --target ws set-pipeline --config pipeline.yaml --pipeline walking-skeleton 
 ```
 
 ```
-fly --target ws watch --pipeline walking-skeleton
-```
-
-```
 fly --target ws destroy-pipeline --pipeline walking-skeleton
 ```
