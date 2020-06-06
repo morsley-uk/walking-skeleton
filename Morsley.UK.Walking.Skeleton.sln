@@ -51,14 +51,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.Walking.Skeleton
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Morsley.UK.WalkingSkeleton.API.Tests.Unit", "Tests\Unit\Morsley.UK.Walking.Skeleton.API.UnitTests\Morsley.UK.WalkingSkeleton.API.Tests.Unit.csproj", "{C5A1F29F-10EB-4384-9889-59D985267315}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{90FDD811-F6A6-4AAD-8331-FA86ABF39071}"
-	ProjectSection(SolutionItems) = preProject
-		Pipelines\Scripts\clean.sh = Pipelines\Scripts\clean.sh
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Concourse", "Concourse", "{ED400882-F14F-4592-A6FE-CFF5388FE672}"
 	ProjectSection(SolutionItems) = preProject
 		Pipelines\Concourse\docker-compose.yaml = Pipelines\Concourse\docker-compose.yaml
+		Pipelines\Concourse\Vagrant.md = Pipelines\Concourse\Vagrant.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{D0A506ED-17CE-4361-9104-C8C390F21C50}"
@@ -109,7 +105,6 @@ Global
 		{425C780E-1E00-462E-800C-AF0FC82F7383} = {36F6004E-F729-4218-9B43-54036409A040}
 		{02105B62-6A77-473D-B429-19DEAEEB2C2B} = {425C780E-1E00-462E-800C-AF0FC82F7383}
 		{C5A1F29F-10EB-4384-9889-59D985267315} = {77B088F8-90F6-45FD-844C-046A74D9B47C}
-		{90FDD811-F6A6-4AAD-8331-FA86ABF39071} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
 		{ED400882-F14F-4592-A6FE-CFF5388FE672} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
 		{D0A506ED-17CE-4361-9104-C8C390F21C50} = {01963D43-9154-4C3F-B297-672B89C71488}
 		{49F6E426-00EA-4D68-B75B-D66F44BFF4FC} = {01963D43-9154-4C3F-B297-672B89C71488}

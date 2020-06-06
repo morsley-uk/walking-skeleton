@@ -1,9 +1,9 @@
 ```
-fly --target aws login --username test --password test --concourse-url https://concourse.morsley.io
+fly --target ws login --username test --password test --concourse-url https://concourse.jasonmorsley.io
 ```
 
 ```
-fly --target aws set-pipeline --config pipeline.yaml --pipeline walking-skeleton
+fly --target ws set-pipeline --config pipeline.yaml --pipeline walking-skeleton
 ```
 
 
@@ -30,13 +30,13 @@ docker-password: [PASSWORD]
 i.e.
 
 ```
-fly --target aws set-pipeline --config pipeline.yaml --pipeline walking-skeleton --load-vars-from credentials.yaml
+fly --target ws set-pipeline --config pipeline.yaml --pipeline walking-skeleton --load-vars-from credentials.yaml
 ```
 
 ```
-fly --target aws watch --pipeline walking-skeleton
+fly --target ws watch --pipeline walking-skeleton
 ```
 
 ```
-fly --target aws destroy-pipeline --pipeline walking-skeleton
+fly --target ws destroy-pipeline --pipeline walking-skeleton
 ```

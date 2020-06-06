@@ -1,0 +1,18 @@
+---
+
+resources:
+  
+  #
+  # DOCKER
+  #
+  - name: docker
+    type: docker-image
+    icon: docker
+    source: morsley
+  
+  #
+  # S3
+  #
+
+  - name: kubeconfig
+    type: 

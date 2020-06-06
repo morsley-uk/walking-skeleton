@@ -2,7 +2,7 @@
 
 The files in this folder are for the Concourse open sourced continuous thing-doer.
 
-Concourse will be set up to contantly monitor the GitHub repository for changes and trigger the pipelines when changes are detected.
+Concourse will be set up to constantly monitor the GitHub repository for changes and trigger the pipelines when changes are detected.
 
 Why Concourse though? That's because we want to be Cloud provider agnostic.
 
