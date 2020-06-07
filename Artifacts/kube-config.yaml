@@ -3,23 +3,23 @@ kind: Config
 clusters:
 - name: "walking-skeleton"
   cluster:
-    server: "https://rancher.morsley.io/k8s/clusters/c-r2f4n"
+    server: "https://rancher.morsley.io/k8s/clusters/c-2j84t"
     certificate-authority-data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJpRENDQ\
       VM2Z0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQTdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
       kdsemRHVnVaWEl0YjNKbk1Sc3dHUVlEVlFRREV4SmtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRXdIa\
-      GNOTWpBdwpOakEzTURZek1UVTNXaGNOTXpBd05qQTFNRFl6TVRVM1dqQTdNUnd3R2dZRFZRUUtFe\
+      GNOTWpBdwpOakEzTVRNME1EUTJXaGNOTXpBd05qQTFNVE0wTURRMldqQTdNUnd3R2dZRFZRUUtFe\
       E5rZVc1aGJXbGpiR2x6CmRHVnVaWEl0YjNKbk1Sc3dHUVlEVlFRREV4SmtlVzVoYldsamJHbHpkR\
-      1Z1WlhJdFkyRXdXVEFUQmdjcWhrak8KUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVJMbWVxbnBucGNob\
-      ktjWWJxUTdCdCt4M3g4SGpPeFg2MkMydEdzeTN5dQpVYnRQZ3h6K3Q1Ykc0MzRSNVFMbTA2UFliW\
-      m45aVZNTmhRWW1YdXI3Sll4Tm95TXdJVEFPQmdOVkhROEJBZjhFCkJBTUNBcVF3RHdZRFZSMFRBU\
-      UgvQkFVd0F3RUIvekFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUVBbFhCZkRwclkKMFBXY1VLbFViR\
-      nBBVE02M1B5ZVIvbVdRTlhpM0QxSWRNVG9DSUVacWZUSHdBUGx0K3VqODZqVGxjQjRkSS9PRQpIV\
-      y9oeG5NNlRrb2RKYTBxCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0="
+      1Z1WlhJdFkyRXdXVEFUQmdjcWhrak8KUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVNSb0lRUjk5M1FYb\
+      VpPd0tnRUNUSTdkOXRpbkk2Z1Vid3RndnhLQUxtSQpDU1hxdmNhQVV6cC9tUWQ0SWxXdUh4aE9wZ\
+      XNLdkJhVERaK3dsS0tjbk1uU295TXdJVEFPQmdOVkhROEJBZjhFCkJBTUNBcVF3RHdZRFZSMFRBU\
+      UgvQkFVd0F3RUIvekFLQmdncWhrak9QUVFEQWdOSUFEQkZBaUFVZE9VSXIyN0MKMCsxNXlWNUV6c\
+      Vg2dno5Y1orM3VadkUwMW5nL3VEdWZEUUloQUxydDM3cHlsSWhqZDRvek04T1dheElpSWYxUApoQ\
+      TZWbW1TWU1PTElSUlc1Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0="
 
 users:
 - name: "walking-skeleton"
   user:
-    token: "kubeconfig-user-9c99w:pkfcwnpdcb6hxbqcqsfnqfrm69t9vhs56qgx5xvztx76dpqmxl7dzh"
+    token: "kubeconfig-user-xgdcl:7lttjvmg87hwj87pc26qd77btwlspqnmf64fz64mzs2j2m57wksd68"
 
 contexts:
 - name: "walking-skeleton"

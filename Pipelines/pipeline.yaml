@@ -11,7 +11,7 @@ resources:
 
   - name: master    
     type: git
-    icon: github
+    icon: git
     # check_every: 5 # Minutes
     source:
       uri: https://github.com/morsley-uk/walking-skeleton
@@ -59,7 +59,7 @@ resources:
 
 jobs:
 
-  - name: CD
+  - name: CI
     serial: true
 
     plan:
@@ -138,7 +138,7 @@ jobs:
 
       - get: master
         trigger: true
-        passed: [CD]
+        passed: [CI]
         
       #- get: kubeconfig
         
@@ -146,6 +146,6 @@ jobs:
         file: master/Pipelines/Tasks/tree.yaml
         input_mapping: { folder: master }
 
-#      - task: deploy
-#        file: master/Pipelines/Tasks/deploy.yaml
-#        input_mapping: { deploy: master }
+      - task: deploy
+        file: master/Pipelines/Tasks/deploy.yaml
+        input_mapping: { deploy: master }
