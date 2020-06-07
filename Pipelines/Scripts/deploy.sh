@@ -4,13 +4,17 @@ set -x
 
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 
+WD=$(pwd)
+
+echo "PWD:" ${WD}
+
 #ROOT=${PARENT_PATH}/..
-#SCRIPTS=${PARENT_PATH}/Pipelines/Scripts
-#source $SCRIPTS/header.sh
+SCRIPTS=${WD}/Pipelines/Scripts
+source ${SCRIPTS}/header.sh
 
 #echo "PARENT_PATH:" ${PARENT_PATH}
 #echo "ROOT:" ${ROOT}
-#echo "SCRIPTS:" ${SCRIPTS}
+echo "SCRIPTS:" ${SCRIPTS}
 
 ls -la
 
