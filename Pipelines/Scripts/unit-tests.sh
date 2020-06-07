@@ -50,4 +50,4 @@ cd ..
 
 ls -la
 
-#rm --recursive --force Unit
+rm --recursive --force Unit

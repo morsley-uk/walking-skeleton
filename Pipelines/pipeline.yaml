@@ -27,13 +27,13 @@ resources:
   # DOCKER
   # 
 
-#  - name: docker
-#    type: docker-image
-#    icon: docker
-#    source: 
-#      repository: jasonmorsleyio/walking-skeleton-api
-#      username: ((docker-username))
-#      password: ((docker-password))
+  - name: docker
+    type: docker-image
+    icon: docker
+    source: 
+      repository: jasonmorsleyio/walking-skeleton-api
+      username: ((docker-username))
+      password: ((docker-password))
 
   #
   # DETERMINE THE SEMANTIC VERSION
@@ -113,11 +113,11 @@ jobs:
       #  CONTAINERISE
       #
 
-#      - put: docker
-#        params:
-#          build: .
-#          dockerfile: master/Pipelines/Dockerfile 
-#
+      - put: docker
+        params:
+          build: .
+          dockerfile: master/Pipelines/Dockerfile 
+
 #      #- task: containerise
 #      #  file: master/Pipelines/Tasks/containerise.yaml
 #      #  input_mapping: { tested: master }
