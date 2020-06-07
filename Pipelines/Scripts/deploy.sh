@@ -22,8 +22,8 @@ cd ${K8S} && ls -la
 
 # Do we need to be SSHd into a node?
 
-export KUBECONFIG=${K8S}/kube-config.yaml
+export KUBECONFIG=${ARTIFACTS}/kube-config.yaml
 
-kubectl apply --filename deployment.yaml 
+kubectl apply --filename ${K8S}/deployment.yaml 
 
-kubectl apply --filename service.yaml
+kubectl apply --filename ${K8S}/service.yaml
