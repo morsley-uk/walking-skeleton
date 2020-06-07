@@ -19,4 +19,4 @@ run:
     - -exec
     - |
       chmod u+x deploy/Pipelines/Scripts/deploy.sh
-      sh deploy/Pipelines/Scripts/depoy.sh
+      sh deploy/Pipelines/Scripts/deploy.sh
