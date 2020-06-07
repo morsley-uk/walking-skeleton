@@ -30,7 +30,7 @@ source ${SCRIPTS}/header.sh
 #SCRIPTS=${WD}/code/Pipelines/Scripts
 #echo "SCRIPTS:" ${SCRIPTS}
 
-#cd code
+cd code
 
 ###############################################################################
 
