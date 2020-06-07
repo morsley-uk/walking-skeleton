@@ -5,7 +5,7 @@ set -x
 #ls -la
 
 #PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-#ROOT="$PARENT_PATH"/../../..
+#ROOT="$PARENT_PATH"/../..
 #CI="$ROOT"/Pipelines/CI
 #SCRIPTS="$ROOT"/Pipelines/Scripts
 #source $SCRIPTS/header.sh
