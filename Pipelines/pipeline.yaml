@@ -145,3 +145,7 @@ jobs:
       - task: tree-source 
         file: master/Pipelines/Tasks/tree.yaml
         input_mapping: { folder: master }
+
+      - task: deploy
+        file: master/Pipelines/Tasks/delpoy.yaml
+        input_mapping: { deploy: master }
