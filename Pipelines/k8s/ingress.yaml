@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: walking-skeleton-ingress
+spec:
+  rules:
+    - host: ws.morsley.io
+      http:
+        paths:
+          - backend:
+              serviceName: walking-skeleton-svc

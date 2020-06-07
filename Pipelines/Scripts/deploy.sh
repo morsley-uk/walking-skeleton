@@ -27,3 +27,5 @@ export KUBECONFIG=${ARTIFACTS}/kube-config.yaml
 kubectl apply --filename ${K8S}/deployment.yaml 
 
 kubectl apply --filename ${K8S}/service.yaml
+
+kubectl apply --filename ${K8S}/ingress.yaml
