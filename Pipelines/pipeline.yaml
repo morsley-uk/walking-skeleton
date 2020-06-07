@@ -27,13 +27,13 @@ resources:
   # DOCKER
   # 
 
-#  - name: docker
-#    type: docker-image
-#    icon: docker
-#    source: 
-#      repository: jasonmorsleyio/walking-skeleton-api
-#      username: ((docker-username))
-#      password: ((docker-password))
+  - name: docker
+    type: docker-image
+    icon: docker
+    source: 
+      repository: jasonmorsleyio/walking-skeleton-api
+      username: ((docker-username))
+      password: ((docker-password))
 
   #
   # DETERMINE THE SEMANTIC VERSION
@@ -92,27 +92,27 @@ jobs:
         file: master/Pipelines/Tasks/tree.yaml
         input_mapping: { folder: master }
 
-#      #
-#      # RUN UNIT TESTS
-#      #
-#
-#      - task: unit-tests
-#        file: master/Pipelines/Tasks/unit-tests.yaml
-#        input_mapping: { built: master }
-#        output_mapping: { built: master }
-#
-#      #
-#      # TREE UNIT TEST RESULTS
-#      #
-#
-#      - task: tree-unit-test-results
-#        file: master/Pipelines/Tasks/tree.yaml
-#        input_mapping: { folder: master }
-#
-#      #
-#      #  CONTAINERISE
-#      #
-#
+      #
+      # RUN UNIT TESTS
+      #
+
+      - task: unit-tests
+        file: master/Pipelines/Tasks/unit-tests.yaml
+        input_mapping: { built: master }
+        output_mapping: { built: master }
+
+      #
+      # TREE UNIT TEST RESULTS
+      #
+
+      - task: tree-unit-test-results
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      #  CONTAINERISE
+      #
+
 #      - put: docker
 #        params:
 #          build: .

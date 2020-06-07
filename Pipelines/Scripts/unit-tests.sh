@@ -1,13 +1,17 @@
 #!/bin/bash
 
-#set -x
-
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-ROOT="$PARENT_PATH"/../..
-SCRIPTS="$ROOT"/Pipelines/Scripts
-source $SCRIPTS/header.sh
+echo "PARENT_PATH:" ${PARENT_PATH}
+source ${PARENT_PATH}/header.sh
+
+WD=$(pwd)
+echo "WD:" ${WD}
+
+ls -la
 
 cd built/Tests/Unit
+
+ls -la
 
 ###############################################################################
 
@@ -28,7 +32,7 @@ for d in */; do
         test_dll=$(find *bin/Release* -type f -name $filename)
     
         dotnet vstest $test_dll --logger:trx \
-                                --ResultsDirectory:$ROOT/TestsResults/Unit
+                                --ResultsDirectory:${WD}/built/TestsResults/Unit
 
         sub-header 'TESTS FINISHED'
 
@@ -44,4 +48,6 @@ header 'UNIT TESTS COMPLETED'
 
 cd ..
 
-rm --recursive Unit
+ls -la
+
+#rm --recursive --force Unit
