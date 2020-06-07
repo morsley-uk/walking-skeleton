@@ -1,34 +1,13 @@
 #!/bin/bash
 
+#set -x
+
+PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
+echo "PARENT_PATH:" ${PARENT_PATH}
+source ${PARENT_PATH}/header.sh
+
 WD=$(pwd)
 echo "WD:" ${WD}
-
-SCRIPTS=${WD}/code/Pipelines/Scripts
-echo "SCRIPTS:" ${SCRIPTS}
-
-source ${SCRIPTS}/header.sh
-
-#echo "------------------------------------------------------------------------------------"
-
-#ls -la
-
-#echo "------------------------------------------------------------------------------------"
-
-#cd code
-
-#ls -la
-
-#echo "------------------------------------------------------------------------------------"
-
-#set -x
-#
-#PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-#ROOT="$PARENT_PATH"/../../..
-#
-#WD=$(pwd)
-#echo "WD:" ${WD}
-#SCRIPTS=${WD}/code/Pipelines/Scripts
-#echo "SCRIPTS:" ${SCRIPTS}
 
 cd code
 
