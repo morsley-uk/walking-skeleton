@@ -7,11 +7,7 @@ source ${PARENT_PATH}/header.sh
 WD=$(pwd)
 echo "WD:" ${WD}
 
-ls -la
-
 cd built/Tests/Unit
-
-ls -la
 
 ###############################################################################
 
@@ -46,8 +42,12 @@ header 'UNIT TESTS COMPLETED'
 
 ###############################################################################
 
+header 'DELETING UNIT TESTS'
+
 cd ..
 
-ls -la
-
 rm --recursive --force Unit
+
+header 'UNIT TESTS DELETED'
+
+###############################################################################

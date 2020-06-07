@@ -59,7 +59,7 @@ header 'PUBLISH COMPLETED'
 
 ###############################################################################
 
-header 'DELETE SOURCE'
+header 'DELETING SOURCE'
 
 rm --recursive --force ${WD}/code/Source
 
