@@ -10,3 +10,5 @@ source $SCRIPTS/header.sh
 echo "PARENT_PATH:" ${PARENT_PATH}
 echo "ROOT:" ${ROOT}
 echo "SCRIPTS:" ${SCRIPTS}
+
+kubectl version --client
