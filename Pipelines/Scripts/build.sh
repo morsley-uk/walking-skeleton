@@ -1,62 +1,83 @@
 #!/bin/bash
 
-set -x
+echo "------------------------------------------------------------------------------------"
 
-PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
-ROOT="$PARENT_PATH"/../../..
+echo ${pwd}
 
-WD=$(pwd)
-echo "WD:" ${WD}
-SCRIPTS=${WD}/deploy/Pipelines/Scripts
-echo "SCRIPTS:" ${SCRIPTS}
-source ${SCRIPTS}/header.sh
+ls -la
+
+echo "------------------------------------------------------------------------------------"
 
 cd code
 
-###############################################################################
+echo ${pwd}
 
-header 'CLEAN STARTED'
+ls -la
 
-dotnet clean --nologo \
-             --verbosity normal
+echo "------------------------------------------------------------------------------------"
 
-header 'CLEAN COMPLETED'
 
-###############################################################################
 
-header 'RESTORE STARTED'
 
-dotnet restore --verbosity normal
 
-header 'RESTORE COMPLETED'
 
-###############################################################################
+#set -x
+#
+#PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
+#ROOT="$PARENT_PATH"/../../..
+#
+#WD=$(pwd)
+#echo "WD:" ${WD}
+#SCRIPTS=${WD}/code/Pipelines/Scripts
+#echo "SCRIPTS:" ${SCRIPTS}
+#source ${SCRIPTS}/header.sh
 
-header 'BUILD STARTED'
-
-dotnet build --configuration Release \
-             --no-restore \
-             --verbosity normal
-
-header 'BUILD COMPLETED'
+#cd code
 
 ###############################################################################
 
-header 'PUBLISH STARTED'
+#header 'CLEAN STARTED'
+#
+#dotnet clean --nologo \
+#             --verbosity normal
+#
+#header 'CLEAN COMPLETED'
 
-cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+###############################################################################
 
-dotnet publish --configuration Release \
-               --nologo \
-               --no-build \
-               --no-restore \
-               --output ${ROOT}/Published \
-               --verbosity normal
+#header 'RESTORE STARTED'
+#
+#dotnet restore --verbosity normal
+#
+#header 'RESTORE COMPLETED'
 
-header 'PUBLISH COMPLETED'
+###############################################################################
 
-ls -
+#header 'BUILD STARTED'
+#
+#dotnet build --configuration Release \
+#             --no-restore \
+#             --verbosity normal
+#
+#header 'BUILD COMPLETED'
 
-cd ../../..
+###############################################################################
 
-rm --recursive Source
+#header 'PUBLISH STARTED'
+#
+#cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+#
+#dotnet publish --configuration Release \
+#               --nologo \
+#               --no-build \
+#               --no-restore \
+#               --output ${ROOT}/Published \
+#               --verbosity normal
+#
+#header 'PUBLISH COMPLETED'
+#
+#ls -
+#
+#cd ../../..
+#
+#rm --recursive Source
