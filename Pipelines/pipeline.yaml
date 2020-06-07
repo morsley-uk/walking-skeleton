@@ -59,7 +59,7 @@ resources:
 
 jobs:
 
-  - name: ci
+  - name: CD
     serial: true
 
     plan:
@@ -131,21 +131,21 @@ jobs:
 #      #  file: master/Pipelines/Tasks/tree.yaml
 #      #  input_mapping: { folder: master }
         
-#  - name: cd
-#    serial: true
-#      
-#    plan:
-#
-#      - get: master
-#        trigger: true
-#        passed: [ci]
-#        
-#      #- get: kubeconfig
-#        
-#      - task: tree-source 
-#        file: master/Pipelines/Tasks/tree.yaml
-#        input_mapping: { folder: master }
-#
+  - name: CD
+    serial: true
+      
+    plan:
+
+      - get: master
+        trigger: true
+        passed: [CD]
+        
+      #- get: kubeconfig
+        
+      - task: tree-source 
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
 #      - task: deploy
 #        file: master/Pipelines/Tasks/deploy.yaml
 #        input_mapping: { deploy: master }
