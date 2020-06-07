@@ -147,5 +147,5 @@ jobs:
         input_mapping: { folder: master }
 
       - task: deploy
-        file: master/Pipelines/Tasks/delpoy.yaml
+        file: master/Pipelines/Tasks/deploy.yaml
         input_mapping: { deploy: master }
