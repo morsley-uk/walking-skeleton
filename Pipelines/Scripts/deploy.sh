@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls -la
+#ls -la
 
 #set -x
 
@@ -8,8 +8,8 @@ ls -la
 
 WD=$(pwd)
 echo "WD:" ${WD}
-cd ${WD}
-ls -la
+#cd ${WD}
+#ls -la
 
 SCRIPTS=${WD}/deploy/Pipelines/Scripts
 #echo "ROOT:" ${ROOT}
