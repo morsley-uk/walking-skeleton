@@ -67,29 +67,31 @@ header 'BUILD STARTED'
 
 ls -la
 
-#dotnet build --configuration Release \
-#             --no-restore \
-#             --verbosity normal
+dotnet build --configuration Release \
+             --no-restore \
+             --verbosity normal
 
 header 'BUILD COMPLETED'
 
 ###############################################################################
 
-#header 'PUBLISH STARTED'
-#
-#cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
-#
+header 'PUBLISH STARTED'
+
+ls -la
+
+cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+
+ls -la
+
 #dotnet publish --configuration Release \
 #               --nologo \
 #               --no-build \
 #               --no-restore \
 #               --output ${WD}/Published \
 #               --verbosity normal
-#
-#header 'PUBLISH COMPLETED'
-#
-#ls -
-#
-#cd ../../..
-#
-#rm --recursive Source
+
+header 'PUBLISH COMPLETED'
+
+cd ${WD}/code
+
+rm --recursive --force Source
