@@ -9,7 +9,11 @@ source ${PARENT_PATH}/header.sh
 WD=$(pwd)
 echo "WD:" ${WD}
 
+ls -la
+
 cd code
+
+ls -la
 
 ###############################################################################
 
@@ -25,8 +29,8 @@ header 'CLEAN STARTED'
 
 ls -la
 
-dotnet clean --nologo \
-             --verbosity normal
+#dotnet clean --nologo \
+#             --verbosity normal
 
 header 'CLEAN COMPLETED'
 
@@ -36,7 +40,7 @@ header 'RESTORE STARTED'
 
 ls -la
 
-dotnet restore --verbosity normal
+#dotnet restore --verbosity normal
 
 header 'RESTORE COMPLETED'
 
@@ -46,9 +50,9 @@ header 'BUILD STARTED'
 
 ls -la
 
-dotnet build --configuration Release \
-             --no-restore \
-             --verbosity normal
+#dotnet build --configuration Release \
+#             --no-restore \
+#             --verbosity normal
 
 header 'BUILD COMPLETED'
 
@@ -62,15 +66,17 @@ cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
 
 ls -la
 
-dotnet publish --configuration Release \
-               --nologo \
-               --no-build \
-               --no-restore \
-               --output ${WD}/Published \
-               --verbosity normal
+#dotnet publish --configuration Release \
+#               --nologo \
+#               --no-build \
+#               --no-restore \
+#               --output ${WD}/Published \
+#               --verbosity normal
 
 header 'PUBLISH COMPLETED'
 
 cd ${WD}/code
 
-rm --recursive --force Source
+ls -la
+
+#rm --recursive --force Source
