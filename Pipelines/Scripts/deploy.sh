@@ -20,6 +20,8 @@ cd ${ARTIFACTS} && ls -la
 echo "Kubernetes:"
 cd ${K8S} && ls -la
 
+# Do we need to be SSHd into a node?
+
 export KUBECONFIG=${K8S}/kube-config.yaml
 
 kubectl apply --filename deployment.yaml 
