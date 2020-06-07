@@ -13,11 +13,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}"
 	ProjectSection(SolutionItems) = preProject
 		Pipelines\ReadMe.md = Pipelines\ReadMe.md
-		Pipelines\Concourse - Local.md = Pipelines\Concourse - Local.md
 		Pipelines\Concourse.md = Pipelines\Concourse.md
 		Pipelines\credentials.yaml = Pipelines\credentials.yaml
 		Pipelines\Dockerfile = Pipelines\Dockerfile
 		Pipelines\pipeline.yaml = Pipelines\pipeline.yaml
+		Pipelines\Concourse-Local.md = Pipelines\Concourse-Local.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4B26DDC4-CED6-4887-9A81-96DD3F462EDC}"
