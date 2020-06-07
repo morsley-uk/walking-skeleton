@@ -10,6 +10,6 @@ spec:
   selector:
     app: walking-skeletion-app
   ports:
-    - protocol: "TCP"
-      port: 80
-      targetPort: http
+    - protocol: TCP
+      port: 7777
+      targetPort: 7777

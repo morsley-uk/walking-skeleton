@@ -19,5 +19,4 @@ spec:
         - name: walking-skeleton
           image: johnmorsley/walking-skeleton-api
           ports:
-            - name: http
-              containerPort: 7777
+            - containerPort: 7777
