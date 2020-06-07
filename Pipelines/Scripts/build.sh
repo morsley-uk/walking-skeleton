@@ -2,20 +2,23 @@
 
 WD=$(pwd)
 echo "WD:" ${WD}
+
 SCRIPTS=${WD}/code/Pipelines/Scripts
 echo "SCRIPTS:" ${SCRIPTS}
 
-echo "------------------------------------------------------------------------------------"
+source ${SCRIPTS}/header.sh
 
-ls -la
+#echo "------------------------------------------------------------------------------------"
 
-echo "------------------------------------------------------------------------------------"
+#ls -la
 
-cd code
+#echo "------------------------------------------------------------------------------------"
 
-ls -la
+#cd code
 
-echo "------------------------------------------------------------------------------------"
+#ls -la
+
+#echo "------------------------------------------------------------------------------------"
 
 #set -x
 #
@@ -26,16 +29,25 @@ echo "--------------------------------------------------------------------------
 #echo "WD:" ${WD}
 #SCRIPTS=${WD}/code/Pipelines/Scripts
 #echo "SCRIPTS:" ${SCRIPTS}
-#source ${SCRIPTS}/header.sh
 
 #cd code
 
 ###############################################################################
 
+header 'DOTNET VERSION'
+
+dotnet --version
+
+header 'DOTNET VERSION'
+
+###############################################################################
+
 header 'CLEAN STARTED'
 
-dotnet clean --nologo \
-             --verbosity normal
+ls -la
+
+#dotnet clean --nologo \
+#             --verbosity normal
 
 header 'CLEAN COMPLETED'
 
@@ -43,7 +55,9 @@ header 'CLEAN COMPLETED'
 
 header 'RESTORE STARTED'
 
-dotnet restore --verbosity normal
+ls -la
+
+#dotnet restore --verbosity normal
 
 header 'RESTORE COMPLETED'
 
@@ -51,9 +65,11 @@ header 'RESTORE COMPLETED'
 
 header 'BUILD STARTED'
 
-dotnet build --configuration Release \
-             --no-restore \
-             --verbosity normal
+ls -la
+
+#dotnet build --configuration Release \
+#             --no-restore \
+#             --verbosity normal
 
 header 'BUILD COMPLETED'
 
@@ -67,7 +83,7 @@ header 'BUILD COMPLETED'
 #               --nologo \
 #               --no-build \
 #               --no-restore \
-#               --output ${ROOT}/Published \
+#               --output ${WD}/Published \
 #               --verbosity normal
 #
 #header 'PUBLISH COMPLETED'
