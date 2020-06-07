@@ -57,7 +57,7 @@ header 'RESTORE STARTED'
 
 ls -la
 
-#dotnet restore --verbosity normal
+dotnet restore --verbosity normal
 
 header 'RESTORE COMPLETED'
 
