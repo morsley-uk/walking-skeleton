@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: walking-skeleton
-          image: johnmorsley/walking-skeleton
+          image: johnmorsley/walking-skeleton-api
