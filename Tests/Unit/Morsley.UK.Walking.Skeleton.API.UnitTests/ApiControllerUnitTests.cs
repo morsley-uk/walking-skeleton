@@ -34,7 +34,8 @@ namespace Morsley.UK.WalkingSkeleton.API.Tests.Unit
             response.Should().NotBeNull();
             var result = response as OkObjectResult;
             result.Should().NotBeNull();
-            result.Value.Should().Be("Hello!");
+            string greeting = result.Value.ToString().Substring(0, 5);
+            greeting.Should().Be("Hello");
         }
 
         #endregion Happy Paths

@@ -83,12 +83,12 @@ cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
 
 ls -la
 
-#dotnet publish --configuration Release \
-#               --nologo \
-#               --no-build \
-#               --no-restore \
-#               --output ${WD}/Published \
-#               --verbosity normal
+dotnet publish --configuration Release \
+               --nologo \
+               --no-build \
+               --no-restore \
+               --output ${WD}/Published \
+               --verbosity normal
 
 header 'PUBLISH COMPLETED'
 
