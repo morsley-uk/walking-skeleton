@@ -4,8 +4,8 @@ set -x
 
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 
-#ROOT="$PARENT_PATH"/../..
-SCRIPTS=${PARENT_PATH}/Pipelines/Scripts
+ROOT=${PARENT_PATH}/..
+#SCRIPTS=${PARENT_PATH}/Pipelines/Scripts
 #source $SCRIPTS/header.sh
 
 echo "PARENT_PATH:" ${PARENT_PATH}
@@ -14,8 +14,8 @@ echo "SCRIPTS:" ${SCRIPTS}
 
 ls -la
 
-cd ${SCRIPTS}
+cd ${ROOT}
 
 ls -la
 
-kubectl version --client
+#kubectl version --client
