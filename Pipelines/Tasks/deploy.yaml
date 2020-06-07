@@ -8,10 +8,10 @@ image_resource:
 #    tag: 18.04
 
 inputs:
-  - name: tested
+  - name: deploy
 
-outputs:
-  - name: tested
+#outputs:
+#  - name: tested
 
 run:
   path: sh
