@@ -46,8 +46,8 @@ header 'CLEAN STARTED'
 
 ls -la
 
-#dotnet clean --nologo \
-#             --verbosity normal
+dotnet clean --nologo \
+             --verbosity normal
 
 header 'CLEAN COMPLETED'
 
