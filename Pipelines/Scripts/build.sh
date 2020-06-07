@@ -32,30 +32,30 @@ echo "--------------------------------------------------------------------------
 
 ###############################################################################
 
-#header 'CLEAN STARTED'
-#
-#dotnet clean --nologo \
-#             --verbosity normal
-#
-#header 'CLEAN COMPLETED'
+header 'CLEAN STARTED'
+
+dotnet clean --nologo \
+             --verbosity normal
+
+header 'CLEAN COMPLETED'
 
 ###############################################################################
 
-#header 'RESTORE STARTED'
-#
-#dotnet restore --verbosity normal
-#
-#header 'RESTORE COMPLETED'
+header 'RESTORE STARTED'
+
+dotnet restore --verbosity normal
+
+header 'RESTORE COMPLETED'
 
 ###############################################################################
 
-#header 'BUILD STARTED'
-#
-#dotnet build --configuration Release \
-#             --no-restore \
-#             --verbosity normal
-#
-#header 'BUILD COMPLETED'
+header 'BUILD STARTED'
+
+dotnet build --configuration Release \
+             --no-restore \
+             --verbosity normal
+
+header 'BUILD COMPLETED'
 
 ###############################################################################
 
