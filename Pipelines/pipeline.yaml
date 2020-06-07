@@ -11,7 +11,7 @@ resources:
 
   - name: master    
     type: git
-    icon: github-circle
+    icon: github
     # check_every: 5 # Minutes
     source:
       uri: https://github.com/morsley-uk/walking-skeleton

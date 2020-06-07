@@ -20,4 +20,8 @@ cd ${ARTIFACTS} && ls -la
 echo "Kubernetes:"
 cd ${K8S} && ls -la
 
-kubectl version --client
+export KUBECONFIG=${K8S}/kube-config.yaml
+
+kubectl apply --filename deployment.yaml 
+
+kubectl apply --filename service.yaml
