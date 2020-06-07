@@ -70,7 +70,7 @@ dotnet publish --configuration Release \
                --nologo \
                --no-build \
                --no-restore \
-               --output ${WD}/Published \
+               --output ${WD}/code/Published \
                --verbosity normal
 
 header 'PUBLISH COMPLETED'
