@@ -59,45 +59,45 @@ resources:
 
 jobs:
 
-#  - name: ci
-#    serial: true
-#
-#    plan:
-#
-#      - get: master
-#        trigger: true
-#
-#      #
-#      # TREE SOURCE CODE - MASTER
-#      #
-#
-#      - task: tree-source
-#        file: master/Pipelines/CI/Tasks/tree.yaml
-#        input_mapping: { folder: master }
-#
-#      #
-#      #  BUILD THE SOURCE CODE
-#      #
-#
-#      - task: build
-#        file: master/Pipelines/CI/Tasks/build.yaml
-#        input_mapping: { code: master }
-#        output_mapping: { code: master }
-#
-#      #
-#      # TREE BUILT
-#      #
-#
-#      - task: tree-built
-#        file: master/Pipelines/CI/Tasks/tree.yaml
-#        input_mapping: { folder: master }
-#
+  - name: ci
+    serial: true
+
+    plan:
+
+      - get: master
+        trigger: true
+
+      #
+      # TREE SOURCE CODE - MASTER
+      #
+
+      - task: tree-source
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      #  BUILD THE SOURCE CODE
+      #
+
+      - task: build
+        file: master/Pipelines/Tasks/build.yaml
+        input_mapping: { code: master }
+        output_mapping: { code: master }
+
+      #
+      # TREE BUILT
+      #
+
+      - task: tree-built
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
 #      #
 #      # RUN UNIT TESTS
 #      #
 #
 #      - task: unit-tests
-#        file: master/Pipelines/CI/Tasks/unit-tests.yaml
+#        file: master/Pipelines/Tasks/unit-tests.yaml
 #        input_mapping: { built: master }
 #        output_mapping: { built: master }
 #
@@ -106,7 +106,7 @@ jobs:
 #      #
 #
 #      - task: tree-unit-test-results
-#        file: master/Pipelines/CI/Tasks/tree.yaml
+#        file: master/Pipelines/Tasks/tree.yaml
 #        input_mapping: { folder: master }
 #
 #      #
@@ -116,10 +116,10 @@ jobs:
 #      - put: docker
 #        params:
 #          build: .
-#          dockerfile: master/Pipelines/CI/Dockerfile 
+#          dockerfile: master/Pipelines/Dockerfile 
 #
 #      #- task: containerise
-#      #  file: master/Pipelines/CI/Tasks/containerise.yaml
+#      #  file: master/Pipelines/Tasks/containerise.yaml
 #      #  input_mapping: { tested: master }
 #      #  output_mapping: { tested: master }
 #
@@ -128,24 +128,24 @@ jobs:
 #      #
 #
 #      #- task: tree-containerise
-#      #  file: master/Pipelines/CI/Tasks/tree.yaml
+#      #  file: master/Pipelines/Tasks/tree.yaml
 #      #  input_mapping: { folder: master }
         
-  - name: cd
-    serial: true
-      
-    plan:
-
-      - get: master
-        trigger: true
-        #passed: [ci]
-        
-      #- get: kubeconfig
-        
-      - task: tree-source 
-        file: master/Pipelines/Tasks/tree.yaml
-        input_mapping: { folder: master }
-
-      - task: deploy
-        file: master/Pipelines/Tasks/deploy.yaml
-        input_mapping: { deploy: master }
+#  - name: cd
+#    serial: true
+#      
+#    plan:
+#
+#      - get: master
+#        trigger: true
+#        passed: [ci]
+#        
+#      #- get: kubeconfig
+#        
+#      - task: tree-source 
+#        file: master/Pipelines/Tasks/tree.yaml
+#        input_mapping: { folder: master }
+#
+#      - task: deploy
+#        file: master/Pipelines/Tasks/deploy.yaml
+#        input_mapping: { deploy: master }

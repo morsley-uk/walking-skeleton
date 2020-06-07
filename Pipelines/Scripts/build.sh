@@ -1,56 +1,72 @@
 #!/bin/bash
 
-#set -x
+set -x
 
 PARENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")";pwd -P)
 ROOT="$PARENT_PATH"/../..
-SCRIPTS="$ROOT"/Pipelines/Scripts
-source $SCRIPTS/header.sh
+
+WD=$(pwd)
+echo "WD:" ${WD}
+SCRIPTS=${WD}/deploy/Pipelines/Scripts
+echo "SCRIPTS:" ${SCRIPTS}
+source ${SCRIPTS}/header.sh
+
+ls -la
 
 cd code
 
-###############################################################################
+ls -la
 
-header 'CLEAN STARTED'
+cd ..
 
-dotnet clean --nologo \
-             --verbosity normal
+ls -la 
 
-header 'CLEAN COMPLETED'
+cd .. 
 
-###############################################################################
-
-header 'RESTORE STARTED'
-
-dotnet restore --verbosity normal
-
-header 'RESTORE COMPLETED'
+ls -la
 
 ###############################################################################
 
-header 'BUILD STARTED'
-
-dotnet build --configuration Release \
-             --no-restore \
-             --verbosity normal
-
-header 'BUILD COMPLETED'
+#header 'CLEAN STARTED'
+#
+#dotnet clean --nologo \
+#             --verbosity normal
+#
+#header 'CLEAN COMPLETED'
 
 ###############################################################################
 
-header 'PUBLISH STARTED'
+#header 'RESTORE STARTED'
+#
+#dotnet restore --verbosity normal
+#
+#header 'RESTORE COMPLETED'
 
-cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+###############################################################################
 
-dotnet publish --configuration Release \
-               --nologo \
-               --no-build \
-               --no-restore \
-               --output $ROOT/Published \
-               --verbosity normal
+#header 'BUILD STARTED'
+#
+#dotnet build --configuration Release \
+#             --no-restore \
+#             --verbosity normal
+#
+#header 'BUILD COMPLETED'
 
-header 'PUBLISH COMPLETED'
+###############################################################################
 
-cd ../../..
-
-rm --recursive Source
+#header 'PUBLISH STARTED'
+#
+#cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+#
+#dotnet publish --configuration Release \
+#               --nologo \
+#               --no-build \
+#               --no-restore \
+#               --output ${ROOT}/Published \
+#               --verbosity normal
+#
+#header 'PUBLISH COMPLETED'
+#
+#cd ../../..
+#
+#rm --recursive Source
