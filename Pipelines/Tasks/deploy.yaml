@@ -18,5 +18,5 @@ run:
   args:
     - -exec
     - |
-      chmod u+x tested/Pipelines/Scripts/deploy.sh
-      sh tested/Pipelines/Scripts/depoy.sh
+      chmod u+x deploy/Pipelines/Scripts/deploy.sh
+      sh deploy/Pipelines/Scripts/depoy.sh
