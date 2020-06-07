@@ -9,15 +9,15 @@ source ${SCRIPTS}/header.sh
 ARTIFACTS=${WD}/deploy/Artifacts
 echo "ARTIFACTS:" ${ARTIFACTS}
 
-K8S=${WD}/deploy/k8s
+K8S=${WD}/deploy/Pipelines/k8s
 echo "K8S:" ${K8S}
 
 header 'DEPLOY'
 
 echo "Artifacts:"
-cd ${ARTIFACTS} && ll -la
+cd ${ARTIFACTS} && ls -la
 
 echo "Kubernetes:"
-cd ${K8S} && ll -la
+cd ${K8S} && ls -la
 
 kubectl version --client
